@@ -25,6 +25,11 @@ html, body {
   background: $brand-color;
   color: #fff;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: inherit;
+}
 img {
     max-width: 100%;
 }
@@ -46,6 +51,7 @@ img {
 
 .btn {
   display: inline-block;
+  border: none;
   padding: 17px 20px;
   background-color: $brand-color;
   color: #fff;
@@ -71,3 +77,26 @@ img {
   }
 }
 
+
+.btn-share {
+    position: relative;
+    height: 1rem;
+    a {
+        position: absolute;
+        right: 3rem;
+        top: 2rem;
+        z-index: 999;
+        @include mobile {
+            right: 1.5rem;
+            top: 1rem;
+        }
+    }
+}
+
+.icon-share {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: .5rem;
+    cursor: pointer;
+}

@@ -1,0 +1,63 @@
+<!-- intro -->
+<section class="section">
+    <div class="section__content">
+        <%= image_tag("logo.png", class: "section__logo mb-4") %>
+        <h2>SK텔레콤 PS&M 직영매장</h2>
+        <h1 class="mb-3">EVENT</h1>
+        <p>PS&Marketing은 SK텔레콤의 유통자회사로 <br> 유일한 SK텔레콤 직영스토어 브랜드입니다.</p>
+    </div>
+</section>
+
+<!-- loop events -->
+<% @events.each do |e| %>
+
+    <!-- 프로젝트 기간 종료시 -->
+    <% if e.end < Time.now %>
+        <section 
+            class="section event finished"
+            style="background-image: url('<%= e.image %>');">
+            <div class="section__overlay"></div>
+
+            <div class="section__content">
+                <p class="section__caution">종료된 이벤트입니다.</p>
+                <h3>(<%= e.description %>)</h3>
+                <h2 class="section__title"><%= e.title %></h2>
+                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+            </div>
+
+        </section>
+
+    <!-- 링크 미연동시 -->
+    <% elsif e.link.nil? %>
+        <section 
+            class="section event unstarted"
+            style="background-image: url('<%= e.image %>');">
+            <div class="section__overlay"></div>
+
+            <div class="section__content">
+                <p class="section__caution">준비중입니다.</p>
+                <h3>(<%= e.description %>)</h3>
+                <h2 class="section__title"><%= e.title %></h2>
+                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+            </div>
+
+        </section>
+
+    <!-- 진행중 이벤트 -->
+    <% else %>
+        <section
+            class="section event ongoing"
+            style="background-image: url('<%= e.image %>');">
+            
+            <div class="section__overlay"
+                style="background-color: <%= e.color %>">
+            </div>
+
+            <a class="section__content" href="<%= e.link %>">
+                <h3>(<%= e.description %>)</h3>
+                <h2 class="section__title"><%= e.title %></h2>
+                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+            </a>
+        </section>
+    <% end %>
+<% end %>

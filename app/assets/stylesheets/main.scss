@@ -1,0 +1,22 @@
+$brand-color: #9013FE !default;
+$brand-color-light: #C27DFF !default;
+$pink-purple: #F0C5FF !default;
+$blue-purple: #D0CAFF !default;
+$overlay-color: rgba(35,45,57,0.68) !default;
+$text-color: #333 !default;
+
+
+// Utils
+@import "utils/fonts";
+@import "utils/mixins";
+@import "utils/reset";
+@import "utils/global";
+
+// Sections
+@import "components/home";
+// @import "components/hero";
+// @import "components/sections";
+// @import "components/contact";
+
+// // Custom
+// @import "custom";

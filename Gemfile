@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # upload and save image
 gem 'cloudinary'
 
+gem 'nokogiri', '~> 1.11.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

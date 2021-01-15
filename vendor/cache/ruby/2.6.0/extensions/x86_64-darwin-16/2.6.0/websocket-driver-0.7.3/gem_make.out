@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
-/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-5775-1wnbeav.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-10842-1fvkzan.rb extconf.rb
 creating Makefile
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
@@ -12,4 +12,4 @@ linking shared-object websocket_mask.bundle
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/websocket-driver-0.7.3/ext/websocket-driver
 make DESTDIR\= install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20210115-5775-14q5s1o
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20210115-10842-q57xws

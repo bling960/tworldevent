@@ -93,12 +93,12 @@ function ShareFacebook() {
 
 $(document).ready(function(){ 
 
-  let phone = document.getElementById("phone");
+  var phone = document.getElementById("phone");
 
-  let getPhonePosition = function() {
-    let device = $("#detectWidth").css("content");
-    let offset = getOffset(phone)
-    let phoneForm = document.getElementById("phone-form");
+  var getPhonePosition = function() {
+    var device = $("#detectWidth").css("content");
+    var offset = getOffset(phone)
+    var phoneForm = document.getElementById("phone-form");
 
     if (device == '"large"')
       offset -= 140;

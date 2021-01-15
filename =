@@ -1,0 +1,72 @@
+Successfully installed concurrent-ruby-1.1.7
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+If you are upgrading your Rails application from an older version of Rails:
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+If you are starting a NEW Rails application, you can ignore this notice.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Successfully installed i18n-1.8.7
+Successfully installed tzinfo-2.0.4
+Successfully installed zeitwerk-2.4.2
+Successfully installed minitest-5.14.3
+Successfully installed activesupport-6.1.1
+Successfully installed rack-2.2.3
+Successfully installed rack-test-1.1.0
+Building native extensions. This could take a while...
+Successfully installed racc-1.5.2
+Successfully installed nokogiri-1.11.1-x86_64-darwin
+Successfully installed crass-1.0.6
+Successfully installed loofah-2.9.0
+Successfully installed rails-html-sanitizer-1.3.0
+Successfully installed rails-dom-testing-2.0.3
+Successfully installed builder-3.2.4
+Successfully installed erubi-1.10.0
+Successfully installed actionview-6.1.1
+Successfully installed actionpack-6.1.1
+Successfully installed rake-13.0.3
+Successfully installed thor-1.0.1
+Successfully installed method_source-1.0.0
+Successfully installed railties-6.1.1
+Parsing documentation for concurrent-ruby-1.1.7
+Installing ri documentation for concurrent-ruby-1.1.7
+Parsing documentation for i18n-1.8.7
+Installing ri documentation for i18n-1.8.7
+Parsing documentation for tzinfo-2.0.4
+Installing ri documentation for tzinfo-2.0.4
+Parsing documentation for zeitwerk-2.4.2
+Installing ri documentation for zeitwerk-2.4.2
+Parsing documentation for minitest-5.14.3
+Installing ri documentation for minitest-5.14.3
+Parsing documentation for activesupport-6.1.1
+Installing ri documentation for activesupport-6.1.1
+Parsing documentation for rack-2.2.3
+Installing ri documentation for rack-2.2.3
+Parsing documentation for rack-test-1.1.0
+Installing ri documentation for rack-test-1.1.0
+Parsing documentation for racc-1.5.2
+Installing ri documentation for racc-1.5.2
+Parsing documentation for nokogiri-1.11.1-x86_64-darwin
+Installing ri documentation for nokogiri-1.11.1-x86_64-darwin
+Parsing documentation for crass-1.0.6
+Installing ri documentation for crass-1.0.6
+Parsing documentation for loofah-2.9.0
+Installing ri documentation for loofah-2.9.0
+Parsing documentation for rails-html-sanitizer-1.3.0
+Installing ri documentation for rails-html-sanitizer-1.3.0
+Parsing documentation for rails-dom-testing-2.0.3
+Installing ri documentation for rails-dom-testing-2.0.3
+Parsing documentation for builder-3.2.4
+Installing ri documentation for builder-3.2.4
+Parsing documentation for erubi-1.10.0
+Installing ri documentation for erubi-1.10.0
+Parsing documentation for actionview-6.1.1

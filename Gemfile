@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
+gem 'rake'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -34,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # upload and save image
 gem 'cloudinary'
+
+gem 'msgpack', :platforms=> :ruby_26
 
 gem 'nokogiri', '~> 1.11.1' if (RbConfig::CONFIG['host_os'] =~ /mingw|java|mingw32/)
 

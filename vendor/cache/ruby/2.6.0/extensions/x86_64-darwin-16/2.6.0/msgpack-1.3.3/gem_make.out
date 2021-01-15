@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
-/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-22589-uxzoij.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.6.6/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0 -r ./siteconf20210115-19191-1twx95y.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -12,10 +12,10 @@ checking for rb_hash_clear() in ruby.h... yes
 creating Makefile
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
-make DESTDIR\= clean
+make "DESTDIR=" clean
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
-make DESTDIR\=
+make "DESTDIR="
 compiling buffer.c
 compiling buffer_class.c
 compiling extension_value_class.c
@@ -38,5 +38,5 @@ compiling unpacker_ext_registry.c
 linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
-make DESTDIR\= install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20210115-22589-nvqvx6/msgpack
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 msgpack.bundle ./.gem.20210115-19191-98ucfj/msgpack

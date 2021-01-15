@@ -38,10 +38,18 @@ gem 'cloudinary'
 
 gem 'msgpack', :platforms=> :ruby_26
 
+# bundle lock --add-platform ruby x86-mingw32 x64-mingw32
+# bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
 gem 'nokogiri', '~> 1.11.1' if (RbConfig::CONFIG['host_os'] =~ /mingw|java|mingw32/)
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# admin page
+gem "administrate"
+
+# dotenv
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

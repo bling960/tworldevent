@@ -1,0 +1,12 @@
+development:
+  cloud_name: ENV.fetch("CLOUDINARY_NAME")
+  api_key: ENV.fetch("CLOUDINARY_KEY")
+  api_secret: ENV.fetch("CLOUDINARY_SECRET")
+  secure: true
+  cdn_subdomain: true
+production:
+  cloud_name: ENV.fetch("CLOUDINARY_NAME")
+  api_key: ENV.fetch("CLOUDINARY_KEY")
+  api_secret: ENV.fetch("CLOUDINARY_SECRET")
+  secure: true
+  cdn_subdomain: true

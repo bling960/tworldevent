@@ -23,7 +23,7 @@
     <% if e.end < Time.now %>
         <section 
             class="section event finished"
-            style="background-image: url('https://i.ibb.co/d6p1hfD/bg2.jpg');">
+            style="background-image: url('https://i.ibb.co/7KKhkFR/Return-key-in-the-shape-of-New-Zealand-series.jpg');">
             <div class="section__overlay"></div>
 
             <div class="section__content">
@@ -53,9 +53,10 @@
 
     <!-- 진행중 이벤트 -->
     <% else %>
+        <% links = ["https://i.ibb.co/rmJX2y0/bg1.jpg", "https://i.ibb.co/d6p1hfD/bg2.jpg"] %>
         <section
             class="section event ongoing"
-            style="background-image: url('https://i.ibb.co/rmJX2y0/bg1.jpg');">
+            style="background-image: url('<%= links[e.id - 1] %>');">
             
             <div class="section__overlay"
                 style="background-color: <%= e.color %>">

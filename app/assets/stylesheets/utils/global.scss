@@ -14,6 +14,11 @@ html, body {
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+
+    @include mobile {
+        font-size: .92em;
+    }
   }
 
 ::selection {
@@ -52,29 +57,29 @@ img {
 .btn {
   display: inline-block;
   border: none;
-  padding: 17px 20px;
+  padding: 17px 25px;
   background-color: $brand-color;
   color: #fff;
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
   transition: all .3s;
-  min-width: 220px;
-  border-radius: 4px;
+  min-width: 250px;
+  border-radius: 12px;
   &:hover {
     background-color: darken($brand-color, 10%);
     color: #fff;
   }
-  &.btn-line {
+}
+
+.btn-line {
     background-color: transparent;
     border: 1px solid $brand-color;
     color: $brand-color;
-    margin: 20px 0;
     &:hover {
       background-color: $brand-color;
       color: #fff;
     }
-  }
 }
 
 
@@ -93,10 +98,39 @@ img {
     }
 }
 
+.icon {
+    width: 20px;
+    vertical-align: text-bottom;
+}
 .icon-share {
     width: 60px;
     height: 60px;
     display: inline-block;
     margin-right: .5rem;
+    cursor: pointer;
+}
+
+.purple {
+    color: $brand-color;
+}
+.black {
+    color: #000;
+}
+.red {
+    color: red;
+}
+
+#detectWidth {
+    display: none;
+    content: "large";
+    @include desktop {
+        content: "desktop";
+    }
+    @include mobile {
+        content: "mobile";
+    }
+}
+
+.clickable {
     cursor: pointer;
 }

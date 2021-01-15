@@ -16,16 +16,16 @@
     &__content {
         display: block;
         position: relative;
-        padding: 150px 100px;
+        margin: 130px 100px;
 
         @include desktop {
-            padding: 100px 100px;
+            margin: 100px 100px;
         }
         @include tablet {
-            padding: 80px 50px;
+            margin: 80px 50px;
         }
         @include mobile {
-            padding: 50px 25px;
+            margin: 75px 25px;
         }
     }
     &__caution {

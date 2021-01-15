@@ -21,10 +21,11 @@
     <meta name="twitter:image:src" content="" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <div id="detectWidth"></div>
     <%= yield %>
   </body>
 </html>

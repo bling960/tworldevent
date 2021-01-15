@@ -17,6 +17,33 @@
 //= require turbolinks
 //= require_tree .
 
+
+function getOffset(obj) {
+  var curtop = 0;
+  if (obj.offsetTop) {
+    curtop += parseInt(obj.offsetTop);
+  }
+  if (obj.scrollTop && obj.scrollTop > 0) {
+    curtop -= parseInt(obj.scrollTop);
+  }
+  if (obj.offsetParent) {
+      var pos = getOffset(obj.offsetParent);
+      curtop += pos;
+  } 
+  else if (obj.ownerDocument) {
+      var thewindow = obj.ownerDocument.defaultView;
+      if(!thewindow && obj.ownerDocument.parentWindow)
+          thewindow = obj.ownerDocument.parentWindow;
+      if(thewindow) {
+          if(thewindow.frameElement) {
+              var pos = getOffset(thewindow.frameElement);
+              curtop += pos[1];
+          }
+      }
+  }
+  return curtop;
+}
+
 function fallbackCopyTextToClipboard(text) {
   var textArea = document.createElement("textarea");
   textArea.value = text;
@@ -63,3 +90,34 @@ function openInNewTab(url) {
 function ShareFacebook() {
   openInNewTab("http://www.facebook.com/sharer.php?u=" + location.href)
 }
+
+$(document).ready(function(){ 
+
+  let phone = document.getElementById("phone");
+
+  let getPhonePosition = function() {
+    let device = $("#detectWidth").css("content");
+    let offset = getOffset(phone)
+    let phoneForm = document.getElementById("phone-form");
+
+    if (device == '"large"')
+      offset -= 140;
+    else if (device == '"desktop"')
+      offset -= 110;
+    else
+      offset -= 90;
+
+    phone.style.height = (phoneForm.clientHeight + 10) + "px";
+    phoneForm.style.top = offset + "px";
+  }
+
+  if (phone) {
+
+    window.onresize = function(event) {
+      setTimeout(getPhonePosition, 200);
+    };
+
+    setTimeout(getPhonePosition, 800);
+    
+  }
+});

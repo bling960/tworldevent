@@ -1,13 +1,16 @@
 <!-- Share button -->
 <div class="btn-share">
-    <a type="button" data-toggle="modal" data-target="#shareModal"><strong>공유하기</strong></a>
+    <a type="button" data-toggle="modal" data-target="#shareModal">
+        <%= image_tag("share/share.png", class: "icon") %>
+        <strong>공유하기</strong>
+    </a>
 </div>
 
 <!-- intro -->
 <section class="section">
     <div class="section__content">
         <%= image_tag("logo.png", class: "section__logo mb-4") %>
-        <h3>SK텔레콤 PS&M 직영매장</h3>
+        <h4>SK텔레콤 PS&M 직영매장</h4>
         <h1 class="mb-3">EVENT</h1>
         <p>PS&Marketing은 SK텔레콤의 유통자회사로 <br> 유일한 SK텔레콤 직영스토어 브랜드입니다.</p>
     </div>
@@ -68,23 +71,4 @@
 <% end %>
 
 <!-- Modal -->
-<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="shareModalLabel">공유하기</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <a class="icon-share" onclick="ShareFacebook()">
-            <%= image_tag("share/facebook.svg") %>
-        </a>
-        <a class="icon-share" onclick="CopyLink()">
-            <%= image_tag("share/link.svg") %>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "partials/share" %>

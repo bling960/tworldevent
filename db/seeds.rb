@@ -14,8 +14,9 @@ event1 = Event.create(
     start: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
     end: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
 
-    link: "/1",
-    visible: true
+    link: "/events/1",
+    visible: true,
+    inputs: "이름, 휴대폰번호, 네이버 ID"
 )
 
 event2 = Event.create(
@@ -23,11 +24,12 @@ event2 = Event.create(
     title: "Galaxy S21 구매고객 초특급 경품 이벤트",
     color: "#002060",
 
-    start: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
+    start: DateTime.strptime("02/22/2021 09:00", "%m/%d/%Y %H:%M"),
     end: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
 
-    link: "/2",
-    visible: true
+    link: "/events/2",
+    visible: true,
+    inputs: "이름, 휴대폰번호"
 )
 
 
@@ -39,8 +41,9 @@ event3 = Event.create(
     start: DateTime.strptime("01/22/2020 09:00", "%m/%d/%Y %H:%M"),
     end: DateTime.strptime("02/28/2020 23:59", "%m/%d/%Y %H:%M"),
 
-    link: "/3",
-    visible: true
+    link: "/events/3",
+    visible: true,
+    inputs: "이름, 휴대폰번호"
 )
 
 event4 = Event.create(
@@ -51,6 +54,7 @@ event4 = Event.create(
     start: DateTime.strptime("05/22/2020 09:00", "%m/%d/%Y %H:%M"),
     end: DateTime.strptime("06/28/2020 23:59", "%m/%d/%Y %H:%M"),
 
-    link: "/4",
-    visible: false
+    link: "/events/4",
+    visible: false,
+    inputs: "이름, 휴대폰번호"
 )

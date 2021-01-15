@@ -2,8 +2,9 @@ $brand-color: #9013FE !default;
 $brand-color-light: #C27DFF !default;
 $pink-purple: #F0C5FF !default;
 $blue-purple: #D0CAFF !default;
-$overlay-color: rgba(35,45,57,0.68) !default;
 $text-color: #333 !default;
+$yellow: #FFFAB5 !default;
+$orange: #F5A623 !default;
 
 
 // Utils
@@ -14,7 +15,7 @@ $text-color: #333 !default;
 
 // Sections
 @import "components/home";
-// @import "components/hero";
+@import "components/event1";
 // @import "components/sections";
 // @import "components/contact";
 

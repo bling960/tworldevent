@@ -10,6 +10,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       
       t.string :link
       t.boolean :visible
+      t.string :inputs
 
       t.timestamps
     end

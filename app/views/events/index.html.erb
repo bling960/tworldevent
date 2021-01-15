@@ -23,7 +23,7 @@
     <% if e.end < Time.now %>
         <section 
             class="section event finished"
-            style="background-image: image-url('bg3.jpeg');">
+            style="background-image: url('assets/bg3.jpeg');">
             <div class="section__overlay"></div>
 
             <div class="section__content">
@@ -39,7 +39,7 @@
     <% elsif e.link.nil? %>
         <section 
             class="section event unstarted"
-            style="background-image: image-url('bg<%=e.id%>.jpeg'));">
+            style="background-image: url('assets/bg3.jpeg'));">
             <div class="section__overlay"></div>
 
             <div class="section__content">
@@ -55,7 +55,7 @@
     <% else %>
         <section
             class="section event ongoing"
-            style="background-image: url('<%= e.image %>');">
+            style="background-image: url('assets/bg<%=e.id%>.jpeg');">
             
             <div class="section__overlay"
                 style="background-color: <%= e.color %>">

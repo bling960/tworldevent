@@ -66,4 +66,6 @@ ul {
 [type=button] {
   background: none;
   outline: none;
+  -webkit-appearance: none;
+    appearance: none;
 }

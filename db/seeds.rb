@@ -38,7 +38,7 @@ event3 = Event.create(
     title: "Galaxy S21 개통고객 구독♡구독 경품 이벤트",
     color: "#002060",
 
-    start: DateTime.strptime("01/22/2020 09:00", "%m/%d/%Y %H:%M"),
+    start: DateTime.strptime("02/22/2020 09:00", "%m/%d/%Y %H:%M"),
     end: DateTime.strptime("02/28/2020 23:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/3",

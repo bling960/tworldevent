@@ -23,7 +23,7 @@
     <% if e.end < Time.now %>
         <section 
             class="section event finished"
-            style="background-image: url('<%= asset_path('bg3.jpeg') %>');">
+            style="background-image: url('https://i.ibb.co/d6p1hfD/bg2.jpg');">
             <div class="section__overlay"></div>
 
             <div class="section__content">
@@ -39,7 +39,7 @@
     <% elsif e.link.nil? %>
         <section 
             class="section event unstarted"
-            style="background-image: url('<%= asset_path('bg3.jpeg') %>');">
+            style="background-image: url('https://i.ibb.co/d6p1hfD/bg2.jpg');">
             <div class="section__overlay"></div>
 
             <div class="section__content">
@@ -53,10 +53,9 @@
 
     <!-- 진행중 이벤트 -->
     <% else %>
-        <% bg_path = "bg" + e.id.to_s + ".jpeg" %>
         <section
             class="section event ongoing"
-            style="background-image: url('<%= asset_path(bg_path) %>');">
+            style="background-image: url('https://i.ibb.co/rmJX2y0/bg1.jpg');">
             
             <div class="section__overlay"
                 style="background-color: <%= e.color %>">

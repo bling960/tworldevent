@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-90097-1tw9xib.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-95446-bp1o83.rb extconf.rb
 creating Makefile
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.bundle
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make DESTDIR\= install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20210115-90097-1xlxerj/skiptrace/internal
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20210115-95446-1h2ub9h/skiptrace/internal

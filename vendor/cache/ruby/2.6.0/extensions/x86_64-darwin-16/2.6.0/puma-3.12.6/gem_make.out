@@ -1,5 +1,5 @@
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
-/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-90097-1wcncj5.rb extconf.rb
+/Users/mac/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/mac/.rvm/rubies/ruby-2.6.0/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210115-95446-onewr5.rb extconf.rb
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -38,4 +38,4 @@ linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/mac/Desktop/dev/skpsnm/vendor/cache/ruby/2.6.0/gems/puma-3.12.6/ext/puma_http11
 make DESTDIR\= install
-/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20210115-90097-nglbjs/puma
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20210115-95446-gjwlwe/puma

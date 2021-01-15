@@ -59,9 +59,11 @@ function fallbackCopyTextToClipboard(text) {
   try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
+    alert("링크 복사 성공!");
     console.log('Fallback: Copying text command was ' + msg);
   } catch (err) {
     console.error('Fallback: Oops, unable to copy', err);
+    alert("죄송합니다. 에러가 발생했습니다. 다시 시도해주세요.")
   }
 
   document.body.removeChild(textArea);

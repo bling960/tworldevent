@@ -14,7 +14,6 @@
 //= require activestorage
 //= require libs/jquery-2.1.0.min
 //= require libs/bootstrap.min
-//= require turbolinks
 //= require_tree .
 
 
@@ -113,7 +112,11 @@ $(document).ready(function(){
 
   if (phone) {
 
-    window.onresize = function(event) {
+    window.onload = function() {
+      setTimeout(getPhonePosition, 800);
+    }
+
+    window.onresize = function() {
       setTimeout(getPhonePosition, 200);
     };
 

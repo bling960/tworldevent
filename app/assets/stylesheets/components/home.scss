@@ -16,6 +16,21 @@
     &__content {
         display: block;
         position: relative;
+        padding: 130px 100px;
+
+        @include desktop {
+            padding: 100px 100px;
+        }
+        @include tablet {
+            padding: 80px 50px;
+        }
+        @include mobile {
+            padding: 75px 25px;
+        }
+    }
+    &__margin {
+        display: block;
+        position: relative;
         margin: 130px 100px;
 
         @include desktop {
@@ -28,6 +43,7 @@
             margin: 75px 25px;
         }
     }
+
     &__caution {
         color: red;
         font-weight: 700;

@@ -14,7 +14,7 @@ html, body {
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    max-width: 100vw;
 
     @include mobile {
         font-size: .92em;
@@ -82,32 +82,9 @@ img {
     }
 }
 
-
-.btn-share {
-    position: relative;
-    height: 1rem;
-    a {
-        position: absolute;
-        right: 3rem;
-        top: 2rem;
-        z-index: 999;
-        @include mobile {
-            right: 1.5rem;
-            top: 1rem;
-        }
-    }
-}
-
 .icon {
     width: 20px;
     vertical-align: text-bottom;
-}
-.icon-share {
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-    margin-right: .5rem;
-    cursor: pointer;
 }
 
 .purple {

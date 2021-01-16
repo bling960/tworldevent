@@ -1,16 +1,9 @@
-
-
 <div class="wrapper event1">
     <%= image_tag("event1/left.png", class: "bg-pattern left") %>
     <%= image_tag("event1/right.png", class: "bg-pattern right") %>
 
     <!-- Share button -->
-    <div class="btn-share">
-        <a type="button" data-toggle="modal" data-target="#shareModal">
-            <%= image_tag("share/share.png", class: "icon") %>
-            <strong>공유하기</strong>
-        </a>
-    </div>
+    <%= render partial: "partials/share" %>
 
     <!-- Header -->
     <section class="section">
@@ -163,9 +156,6 @@
         
     <%= image_tag("event1/galaxy.png", class: "img-at-bottom") %>
 </div>
-
-<!-- Modal -->
-<%= render partial: "partials/share" %>
 
 <!-- Modal -->
 <%= render partial: "partials/privacy" %>

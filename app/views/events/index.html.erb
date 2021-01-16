@@ -1,6 +1,7 @@
 <!-- Share button -->
 <%= render partial: "partials/share" %>
 
+
 <!-- intro -->
 <section class="section">
     <div class="section__content">
@@ -15,7 +16,7 @@
 <% @events.each do |e| %>
 
     <!-- 프로젝트 기간 종료시 -->
-    <% if e.end < Time.now %>
+    <% if e.end_date < Time.now %>
         <section 
             class="section event finished"
             style="background-image: url('https://i.ibb.co/7KKhkFR/Return-key-in-the-shape-of-New-Zealand-series.jpg');">
@@ -25,7 +26,7 @@
                 <p class="section__caution">종료된 이벤트입니다.</p>
                 <h4>(<%= e.description %>)</h4>
                 <h2 class="section__title"><%= e.title %></h2>
-                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </div>
 
         </section>
@@ -41,7 +42,7 @@
                 <p class="section__caution">준비중입니다.</p>
                 <h4>(<%= e.description %>)</h4>
                 <h2 class="section__title"><%= e.title %></h2>
-                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </div>
 
         </section>
@@ -60,7 +61,7 @@
             <a class="section__content" href="<%= e.link %>">
                 <h4>(<%= e.description %>)</h4>
                 <h2 class="section__title"><%= e.title %></h2>
-                <p><%= e.start.strftime("%Y.%m.%d") %> ~ <%= e.end.strftime("%Y.%m.%d") %></p>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </a>
         </section>
     <% end %>

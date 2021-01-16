@@ -15,6 +15,9 @@ class CreateUserOnes < ActiveRecord::Migration[5.2]
       t.string :url
 
       t.boolean :submitted
+      t.boolean :verified
+
+      t.integer :event_id, foreign_key: true
 
       t.timestamps
     end

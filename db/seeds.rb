@@ -11,8 +11,8 @@ event1 = Event.create(
     title: "네이버 예약 리뷰 이벤트",
     color: "#B889DB",
 
-    start: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
-    end: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
+    start_date: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/1",
     visible: true,
@@ -24,8 +24,8 @@ event2 = Event.create(
     title: "Galaxy S21 구매고객 초특급 경품 이벤트",
     color: "#002060",
 
-    start: DateTime.strptime("02/22/2021 09:00", "%m/%d/%Y %H:%M"),
-    end: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
+    start_date: DateTime.strptime("02/22/2021 09:00", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/2",
     visible: true,
@@ -38,8 +38,8 @@ event3 = Event.create(
     title: "Galaxy S21 개통고객 구독♡구독 경품 이벤트",
     color: "#002060",
 
-    start: DateTime.strptime("02/22/2020 09:00", "%m/%d/%Y %H:%M"),
-    end: DateTime.strptime("02/28/2020 23:59", "%m/%d/%Y %H:%M"),
+    start_date: DateTime.strptime("02/22/2020 09:00", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2020 23:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/3",
     visible: true,
@@ -51,8 +51,8 @@ event4 = Event.create(
     title: "종료된 이벤트 예시",
     color: "red",
 
-    start: DateTime.strptime("05/22/2020 09:00", "%m/%d/%Y %H:%M"),
-    end: DateTime.strptime("06/28/2020 23:59", "%m/%d/%Y %H:%M"),
+    start_date: DateTime.strptime("05/22/2020 09:00", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("06/28/2020 23:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/4",
     visible: false,

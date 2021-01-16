@@ -108,7 +108,7 @@
             <% end %>
 
             <div class="row text-left" id="phone-form">
-                <%= form_tag("user/1/verify", class: "offset-lg-3 col-lg-6 col-12", remote: true, 'data-type' => :js) do %>
+                <%= form_tag("/users/1/verify", class: "offset-lg-3 col-lg-6 col-12", remote: true, 'data-type' => :js) do %>
                     <div class="row mb-3">
                         <%= label_tag(:phone_number, "휴대폰번호", class: "col-3 col-form-label") %>
                         <div class="col-6">
@@ -119,10 +119,11 @@
                         </div>
                     </div>
                 <% end %>
-                <%= form_tag("user/1/confirm", class: "offset-lg-3 col-lg-6 col-12", remote: true, 'data-type' => :js) do %>
+                <%= form_tag("/users/1/confirm", class: "offset-lg-3 col-lg-6 col-12", remote: true, 'data-type' => :js) do %>
                     <div class="row mb-3">
                         <div class="offset-3 col-6">
                             <%= text_field_tag(:code, "", placeholder: "인증번호", class: "form-control") %>
+                            <%= hidden_field_tag (:phone_num) %>
                         </div>
                         <div class="col-3 pl-0">
                             <%= submit_tag("확인", class: "btn-line btn-inline text-center") %>

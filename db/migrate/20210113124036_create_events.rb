@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :color
 
-      t.datetime :start
-      t.datetime :end
+      t.datetime :start_date
+      t.datetime :end_date
       
       t.string :link
       t.boolean :visible

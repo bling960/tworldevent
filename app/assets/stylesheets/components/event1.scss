@@ -141,3 +141,10 @@
         white-space: nowrap;
     }
 }
+
+.bg-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    position: absolute;
+    height: 2000px;
+}

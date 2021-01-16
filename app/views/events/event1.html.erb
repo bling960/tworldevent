@@ -1,7 +1,9 @@
 <div class="wrapper event1">
-    <%= image_tag("event1/left.png", class: "bg-pattern left") %>
-    <%= image_tag("event1/right.png", class: "bg-pattern right") %>
-
+    <div class="bg-wrapper">
+        <%= image_tag("event1/left.png", class: "bg-pattern left") %>
+        <%= image_tag("event1/right.png", class: "bg-pattern right") %>
+    </div>
+    
     <!-- Share button -->
     <%= render partial: "partials/share" %>
 

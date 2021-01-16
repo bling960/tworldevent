@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # upload and save image
 gem 'cloudinary'
 
-gem 'msgpack', :platforms=> :ruby_26
+gem 'msgpack', '~> 1.0', :platforms=> :ruby_26
 
 # bundle lock --add-platform ruby x86-mingw32 x64-mingw32
 # bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
@@ -53,6 +53,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+gem 'delayed_job_active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -31,3 +31,45 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      event:
+        one: 이벤트
+        other: 이벤트들
+      user_one:
+        one: 이벤트1 응모자
+        other: 이벤트1 응모자들
+      user_two:
+        one: 이벤트2 응모자
+        other: 이벤트2 응모자들
+  helpers:
+    label:
+      event:
+        title: 이벤트명
+        description: 확진자명
+        color: 배경 색상
+        start_date: 시작일자
+        end_date: 종료일자
+        link: 링크
+        visible: 공개여부
+        inputs: 수집하는 개인정보
+        user_ones: 제출한 사용자
+        user_twos: 제출한 사용자
+        image: 배경 이미지
+      user_one:
+        name: 이름
+        phone: 휴대폰번호
+        code: 인증번호
+        submitted: 제출완료여부
+        naverid: 네이버 아이디
+        url: 네이버 리뷰 URL
+        event_id: 관련 이벤트
+      user_two:
+        name: 이름
+        phone: 휴대폰번호
+        code: 인증번호
+        submitted: 제출완료여부
+        prize: 선택한 경품
+        shop: 매장 코드
+        event_id: 관련 이벤트
+

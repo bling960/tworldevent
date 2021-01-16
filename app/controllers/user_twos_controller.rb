@@ -1,0 +1,2 @@
+class UserTwosController < ApplicationController
+end

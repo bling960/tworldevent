@@ -22,9 +22,15 @@
                 opacity: 1;
             }
         }
-        img {
+        .carousel-app {
             height: 150px;
             width: auto;
+        }
+        .carousel-logo {
+            height: 16px;
+            padding-left: .5rem;
+            width: auto;
+            margin-bottom: .15rem;
         }
     }
     .prize-input ~ label {
@@ -65,9 +71,13 @@
             }
         }
     }
+
+    .section__margin {
+        max-width: calc(100% - 50px);
+        width: 1000px;
+    }
 }
 
 .line-height-low {
     line-height: 1.4;
 }
-

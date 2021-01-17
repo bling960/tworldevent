@@ -71,7 +71,7 @@ class UserOnesController < ApplicationController
         end
     end
 
-    def create_user_one
+    def submit_user_one
         name = params[:user_one][:name]
         phone = params[:user_one][:phone]
         app1 = params[:user_one][:app1]

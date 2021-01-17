@@ -20,9 +20,16 @@ class EventsController < ApplicationController
         render "thank"
     end
 
-    def apply
-        event_id = params[:id]
-        @event = Event.find(event_id)
-        render "apply" + event_id
+    def apply_one
+        @event = Event.find(1)
+        render "apply1"
+    end
+
+    def apply_two
+        @event = Event.find(2)
+
+        @selected_prize = params[:prize].to_i
+
+        render "apply2"
     end
 end

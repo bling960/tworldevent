@@ -10,10 +10,11 @@
     <!-- Header -->
     <section class="section text-center">
         <div class="section__content pb-0">
+            <%= image_tag("logo.png", class: "w-50 mb-4") %>
             <h4 class="black mb-4">2021 Galaxy S21 Series <br> 초기구매고객 경품 이벤트</h4>
             <h4 class="text-white opacity-8 mb-4">New Galaxy와 SK텔레콤 구독서비스가 만났을 때,</h4>
             <div class="mb-4"><%= image_tag("event2/headline.png", class: "img-in-text") %></div>
-            <p class="text-white bg-dark d-inline-block px-4 py-1 mb-3">
+            <p class="text-white bg-dark d-inline-block px-4 py-1 mb-4">
                 <%= @event.start_date.strftime("%Y.%m.%d") %> ~ <%= @event.end_date.strftime("%Y.%m.%d") %>
             </p>
             <div><%= image_tag("galaxy.png", class: "opacity-8 w-75 mr-2") %></div>
@@ -47,47 +48,50 @@
             </div>
 
             <div class="py-5 bg-yellow">
-                <div id="prizeCarousel" class="carousel slide pb-5 mb-4" data-ride="carousel">
+                <%= form_for :user_two, url: "/users/2/new", format: :js, remote: true, html: {class: "text-left"} do |f| %>
+                    <div id="prizeCarousel" class="carousel slide pb-5 mb-4" data-ride="carousel">
 
-                    <ol class="carousel-indicators">
-                        <% 5.times do |i| %>
-                            <li data-target="#prizeCarousel" data-slide-to="<%= i %>" class="<% if i == 0 %> active <% end %>"></li>
-                        <% end %>
-                    </ol>
-                    <div class="carousel-inner">
+                        <ol class="carousel-indicators">
+                            <% 5.times do |i| %>
+                                <li data-target="#prizeCarousel" data-slide-to="<%= i %>" class="<% if i == 0 %> active <% end %>"></li>
+                            <% end %>
+                        </ol>
+                        <div class="carousel-inner">
 
-                        <% descriptions = ["원스토어북스를 제대로 즐기자!", "Vcoloring 콘텐츠 한번 찍어볼까?", "Game is Everywhere!", "FLO로 출근송부터 노동요까지", "하루의 마지막은 Wavve와 치킨이지!"] %>
-                        <% titles = ["더 스마트하게 즐기는 독서생활", "나를 더 아름답게 담는 창작생활", "모바일과 콘솔을 오가는 게임생활", "인생에도 BGM이 깔리는 낭만생활", "치킨 뜯으며 즐기는 문화생활"] %>
-                        <% prizes = ["Samsung Tab A7 LTE (1명)", "GoPro Hero8 (1명)", "XBOX series One (1명)", "Marshall Action Ⅱ (1명)", "황금 올리브 치킨 (21명)"] %>
-
-                        <%= form_for :user_two, url: "/users/2/new", format: :js, remote: true, html: {class: "text-left"} do |f| %>
+                            <% descriptions = ["원스토어북스를 제대로 즐기자!", "Vcoloring 콘텐츠 한번 찍어볼까?", "Game is Everywhere!", "FLO로 출근송부터 노동요까지", "하루의 마지막은 Wavve와 치킨이지!"] %>
+                            <% titles = ["더 스마트하게 즐기는 독서생활", "나를 더 아름답게 담는 창작생활", "모바일과 콘솔을 오가는 게임생활", "인생에도 BGM이 깔리는 낭만생활", "치킨 뜯으며 즐기는 문화생활"] %>
+                            <% prizes = ["Samsung Tab A7 LTE (1명)", "GoPro Hero8 (1명)", "XBOX series One (1명)", "Marshall Action Ⅱ (1명)", "황금 올리브 치킨 (21명)"] %>
+                            
                             <% prizes.each_with_index do |prize, i| %>
                                 <div class="carousel-item <% if i == 0 %> active <% end %>">
                                     <%= f.radio_button :prize, "#{i + 1}", class: "d-none prize-input" %>
-                                    <%= f.label "prize_#{i + 1}".to_sym, class: "offset-1 col-10 offset-md-2 col-md-8 text-center py-3" do %>
+                                    <%= f.label "prize_#{i + 1}".to_sym, class: "offset-1 col-10 offset-md-2 col-md-8 text-center py-3 clickable" do %>
                                         <p><%= descriptions[i] %></p>
                                         <h4 class="option"><%= titles[i] %></h4>
-                                        <%= image_tag("event2/prize#{i + 1}.png", class: "py-2 my-1", alt: "slide number #{i + 1}") %>
+                                        <%= image_tag("event2/prize#{i + 1}.png", class: "carousel-app py-2 my-1", alt: "slide number #{i + 1}") %>
                                         <p class="font-weight-bold orange mb-3"><%= prize %></p>
-                                        <p><span class="bg-orange title">Galaxy S21 X </span></p>
+                                        <p><small class="bg-orange title">
+                                            Galaxy S21 X 
+                                            <%= image_tag("event2/logo#{i + 1}.png", class: "carousel-logo") %>
+                                        </small></p>
                                     <% end %>
                                 </div>
                             <% end %>
-                        <% end %>
+                        </div>
+                        <a class="carousel-control-prev" href="#prizeCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">이전</span>
+                        </a>
+                        <a class="carousel-control-next" href="#prizeCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">다음</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#prizeCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">이전</span>
-                    </a>
-                    <a class="carousel-control-next" href="#prizeCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">다음</span>
-                    </a>
-                </div>
 
-                <div class="text-center">
-                    <a href="/events/2/apply" class="btn">사은품 선택 완료</a>
-                </div>
+                    <div class="text-center">
+                        <%= f.submit "사은품 선택 완료", class: "btn" %>
+                    </div>
+                <% end %>
             </div>
 
             <!-- warnings -->

@@ -1,0 +1,123 @@
+<div class="wrapper event-container event2 pb-5">
+    <div class="bg-wrapper">
+        <%= image_tag("event1/left.png", class: "bg-pattern left") %>
+        <%= image_tag("event1/right.png", class: "bg-pattern right") %>
+    </div>
+    
+    <!-- Share button -->
+    <%= render partial: "partials/share" %>
+
+    <!-- Header -->
+    <section class="section text-center">
+        <div class="section__content pb-0">
+            <h4 class="black mb-4">2021 Galaxy S21 Series <br> 초기구매고객 경품 이벤트</h4>
+            <h4 class="text-white opacity-8 mb-4">New Galaxy와 SK텔레콤 구독서비스가 만났을 때,</h4>
+            <div class="mb-4"><%= image_tag("event2/headline.png", class: "img-in-text") %></div>
+            <p class="text-white bg-dark d-inline-block px-4 py-1 mb-3">
+                <%= @event.start_date.strftime("%Y.%m.%d") %> ~ <%= @event.end_date.strftime("%Y.%m.%d") %>
+            </p>
+            <div><%= image_tag("galaxy.png", class: "opacity-8 w-75 mr-2") %></div>
+        </div>
+    </section>
+
+    <!-- event description -->
+    <section class="section text-center pb-5">
+        <div class="box">
+
+            <div class="box__content">
+                <div>
+                    <p class="mb-4 font-weight-bold">
+                        SK텔레콤 직영매장 (PS&M매장)에서<br>
+                        Galaxy S21 Series를 초기구매하신 고객님 중
+                    </p>
+                    <h3 class="black mb-3 line-height-low">
+                        추첨을 통해 경품을 <br class="d-sm-block d-md-none"> 증정해드립니다.
+                    </h3>
+                    <p class="bg-orange title mb-5 font-weight-bold">
+                        <b>받고싶은 경품을 택1하여 응모</b>
+                    </p>
+                    <p class="text-left">
+                        <b>1. 이벤트 기간</b> : 1월 22일(사전예약개통)~ 2월 28일<br>
+                        <br>
+                        <b>2. 응모 대상</b> : 2021년 1월 22일 ~2월 28일 내 SK텔레콤 직영매장 (PS&M매장)에서 갤럭시S21을 개통 완료한 고객<br>
+                        <br>
+                        <b>3. 당첨자 발표</b> : 3월 중 개별 연락 
+                    </p>
+                </div>
+            </div>
+
+            <div class="py-5 bg-yellow">
+                <div id="prizeCarousel" class="carousel slide pb-5 mb-4" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+                        <% 5.times do |i| %>
+                            <li data-target="#prizeCarousel" data-slide-to="<%= i %>" class="<% if i == 0 %> active <% end %>"></li>
+                        <% end %>
+                    </ol>
+                    <div class="carousel-inner">
+
+                        <% descriptions = ["원스토어북스를 제대로 즐기자!", "Vcoloring 콘텐츠 한번 찍어볼까?", "Game is Everywhere!", "FLO로 출근송부터 노동요까지", "하루의 마지막은 Wavve와 치킨이지!"] %>
+                        <% titles = ["더 스마트하게 즐기는 독서생활", "나를 더 아름답게 담는 창작생활", "모바일과 콘솔을 오가는 게임생활", "인생에도 BGM이 깔리는 낭만생활", "치킨 뜯으며 즐기는 문화생활"] %>
+                        <% prizes = ["Samsung Tab A7 LTE (1명)", "GoPro Hero8 (1명)", "XBOX series One (1명)", "Marshall Action Ⅱ (1명)", "황금 올리브 치킨 (21명)"] %>
+
+                        <%= form_for :user_two, url: "/users/2/new", format: :js, remote: true, html: {class: "text-left"} do |f| %>
+                            <% prizes.each_with_index do |prize, i| %>
+                                <div class="carousel-item <% if i == 0 %> active <% end %>">
+                                    <%= f.radio_button :prize, "#{i + 1}", class: "d-none prize-input" %>
+                                    <%= f.label "prize_#{i + 1}".to_sym, class: "offset-1 col-10 offset-md-2 col-md-8 text-center py-3" do %>
+                                        <p><%= descriptions[i] %></p>
+                                        <h4 class="option"><%= titles[i] %></h4>
+                                        <%= image_tag("event2/prize#{i + 1}.png", class: "py-2 my-1", alt: "slide number #{i + 1}") %>
+                                        <p class="font-weight-bold orange mb-3"><%= prize %></p>
+                                        <p><span class="bg-orange title">Galaxy S21 X </span></p>
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <a class="carousel-control-prev" href="#prizeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">이전</span>
+                    </a>
+                    <a class="carousel-control-next" href="#prizeCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">다음</span>
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <a href="/events/2/apply" class="btn">사은품 선택 완료</a>
+                </div>
+            </div>
+
+            <!-- warnings -->
+            <div class="box__content">
+                <h3 class="mb-4 black">꼭 확인하세요!</h3>
+                <p class="text-left">
+                    <b>유의사항</b><br>
+                    - &nbsp;이 이벤트는 휴대폰 번호 1개당 1회 응모하실 수 있습니다.<br>
+                    - &nbsp;비정상적이거나 불법적인 방법으로 이벤트에 참여하신 경우, 추첨 대상에서 제외되거나 당첨이 취소될 수 있습니다.<br>
+                    - &nbsp;법인 고객님 및 만 14세 미만 고객님은 이 이벤트에 응모하실 수 없습니다.<br>
+                    - &nbsp;이 이벤트는 SK텔레콤의 사정에 따라 변경 또는 조기 종료될 수 있습니다.<br>
+                    - &nbsp;SK텔레콤은 고객님이 정보를 잘못 입력해 경품을 받지 못하신 경우에 대해 책임지지 않습니다.<br>
+                    - &nbsp;이벤트 응모 시 입력하신 휴대폰 번호는 이벤트 종료 후 3개월 이내 파기됩니다.<br>
+                    - &nbsp;이 이벤트는 SK텔레콤의 위탁을 받아 대행사(㈜이모션글로벌)에서 운영합니다.<br>
+
+                    <br>
+                    <b>경품 유의사항</b><br>
+                    - &nbsp;경품은 회사의 사정에 따라 변경될 수 있습니다. <br>
+                    - &nbsp;SK텔레콤 ps&m매장에서 개통하지 않은 경우, 당첨은 취소됩니다.<br>
+                    - &nbsp;당첨된 후, 한달 안에 개통을 취소한 경우 경품도 함께 반환해야 합니다. <br>
+                    - &nbsp;5만원 이상 금액의 경우 제세공과금은 ㈜피에스앤마케팅 이 부담하며,<br>
+                    - &nbsp;이 과정에서 제세공과금 대납을 위한 개인정보 수취가 필요합니다. <br>
+                    - &nbsp;추가적인 개인정보 수취에 동의하지 않을 경우, 제세공과금은 당첨자 본인 부담입니다 (제세공과금 22%)    <br>
+
+
+                </p>
+            </div>
+
+        </div>
+    </section>
+        
+    
+</div>

@@ -17,13 +17,25 @@ class EventDashboard < Administrate::BaseDashboard
     title: Field::String,
     description: Field::String,
     color: Field::String,
-    start_date: Field::DateTime,
-    end_date: Field::DateTime,
+    start_date: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
+    end_date: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
     link: Field::String,
     visible: Field::Boolean,
     inputs: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
+    updated_at: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

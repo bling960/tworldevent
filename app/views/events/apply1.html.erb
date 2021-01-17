@@ -1,4 +1,4 @@
-<div class="wrapper event1">
+<div class="wrapper event-container event1">
     <%= image_tag("event1/left.png", class: "bg-pattern left") %>
     <%= image_tag("event1/right.png", class: "bg-pattern right") %>
 
@@ -52,7 +52,7 @@
 
 
                         <div id="phone" class="row mb-3">
-                            <%= f.hidden_field :phone %>
+                            <%= f.hidden_field :phone, id: "phoneField" %>
                         </div>
                         
                         <div class="row">
@@ -123,7 +123,7 @@
                     <div class="row mb-3">
                         <div class="offset-3 col-6">
                             <%= text_field_tag(:code, "", placeholder: "인증번호", class: "form-control") %>
-                            <%= hidden_field_tag (:phone_num) %>
+                            <%= hidden_field_tag(:phone_num, "", id: "phoneNumField") %>
                         </div>
                         <div class="col-3 pl-0">
                             <%= submit_tag("확인", class: "btn-line btn-inline text-center") %>
@@ -155,7 +155,7 @@
         </div>
     </section>
         
-    <%= image_tag("event1/galaxy.png", class: "img-at-bottom") %>
+    <%= image_tag("galaxy.png", class: "img-at-bottom") %>
 </div>
 
 <!-- Modal -->

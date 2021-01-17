@@ -42,6 +42,9 @@ en:
       user_two:
         one: 이벤트2 응모자
         other: 이벤트2 응모자들
+      setting:
+        one: 통합페이지 설정
+        other: 통합페이지 설정
   helpers:
     label:
       event:
@@ -72,4 +75,10 @@ en:
         prize: 선택한 경품
         shop: 매장 코드
         event_id: 관련 이벤트
+      setting:
+        headline1: 첫째줄 헤드라인
+        headline2: 둘째줄 헤드라인
+        description: 셋째줄 설명글
+        blog: 블로그 링크
+        instagram: 인스타그램 링크
 

@@ -22,8 +22,14 @@ class UserOneDashboard < Administrate::BaseDashboard
     url: Field::String,
     submitted: Field::Boolean,
     verified: Field::Boolean,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
+    updated_at: Field::DateTime.with_options(
+      timezone: "Seoul",
+      format: "%Y.%m.%d %H:%M"
+    ),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

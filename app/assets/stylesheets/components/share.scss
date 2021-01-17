@@ -25,7 +25,18 @@
     top: 5rem;
     @include mobile {
         right: 1.5rem;
-    top: 4rem;
+        top: 4rem;
+    }
+
+    .icon-share {
+        opacity: 0;
+        z-index: 999;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                animation-delay: #{($i - 1) / 25}s;
+            }
+        }
     }
 }
 
@@ -69,11 +80,5 @@
     cursor: pointer;
     background: #fff;
     border-radius: 100%;
-    opacity: 0;
-
-    @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-            animation-delay: #{($i - 1) / 25}s;
-        }
-    }
+    z-index: 990;
 }

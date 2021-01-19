@@ -3,7 +3,6 @@ class CreateUserOnes < ActiveRecord::Migration[5.2]
     create_table :user_ones do |t|
       t.string :name
       t.string :phone
-      t.string :code
 
       t.boolean :app1
       t.boolean :app2
@@ -15,7 +14,6 @@ class CreateUserOnes < ActiveRecord::Migration[5.2]
       t.string :url
 
       t.boolean :submitted
-      t.boolean :verified
 
       t.integer :event_id, foreign_key: true
 

@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_125206) do
   create_table "user_ones", force: :cascade do |t|
     t.string "name"
     t.string "phone"
-    t.string "code"
     t.boolean "app1"
     t.boolean "app2"
     t.boolean "app3"
@@ -86,7 +85,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_125206) do
     t.string "naverid"
     t.string "url"
     t.boolean "submitted"
-    t.boolean "verified"
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -95,11 +93,9 @@ ActiveRecord::Schema.define(version: 2021_01_17_125206) do
   create_table "user_twos", force: :cascade do |t|
     t.string "name"
     t.string "phone"
-    t.string "code"
     t.string "prize"
     t.string "shop"
     t.boolean "submitted"
-    t.boolean "verified"
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

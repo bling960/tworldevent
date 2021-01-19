@@ -16,13 +16,9 @@ Rails.application.routes.draw do
   get '/events/2/apply', to: 'events#apply_two'
 
   post '/users/1/submit', to: 'user_ones#submit_user_one'
-  post '/users/1/verify', to: 'user_ones#verify_user_one'
-  post '/users/1/confirm', to: 'user_ones#confirm_user_one'
 
   post '/users/2/new', to: 'user_twos#create_user_two'
   post '/users/2/submit', to: 'user_twos#submit_user_two'
-  post '/users/2/verify', to: 'user_twos#verify_user_two'
-  post '/users/2/confirm', to: 'user_twos#confirm_user_two'
 
 
   get '/finished', to: 'events#finished'

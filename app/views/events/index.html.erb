@@ -58,9 +58,15 @@
             class="section event ongoing"
             style="background-image: url('<%= @bg %>');">
             
-            <div class="section__overlay"
-                style="background-color: <%= e.color %>">
-            </div>
+            <% if e.color.nil? || e.color.blank? %>
+                <div class="section__overlay"
+                    style="background-color: #9013FE">
+                </div>
+            <% else %>
+                <div class="section__overlay"
+                    style="background-color: <%= e.color %>">
+                </div>
+            <% end %>
 
             <a class="section__content" href="<%= e.link %>">
                 <h4>(<%= e.description %>)</h4>

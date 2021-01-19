@@ -12,11 +12,9 @@ class UserTwoDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     phone: Field::String,
-    code: Field::String,
     prize: Field::String,
     shop: Field::String,
     submitted: Field::Boolean,
-    verified: Field::Boolean,
     created_at: Field::DateTime.with_options(
       timezone: "Seoul",
       format: "%Y.%m.%d %H:%M"
@@ -46,10 +44,8 @@ class UserTwoDashboard < Administrate::BaseDashboard
   id
   name
   phone
-  code
   prize
   shop
-  verified
   submitted
   created_at
   updated_at
@@ -61,10 +57,8 @@ class UserTwoDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   name
   phone
-  code
   prize
   shop
-  verified
   submitted
   ].freeze
 

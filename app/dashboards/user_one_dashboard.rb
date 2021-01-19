@@ -12,7 +12,6 @@ class UserOneDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     phone: Field::String,
-    code: Field::String,
     app1: Field::Boolean,
     app2: Field::Boolean,
     app3: Field::Boolean,
@@ -21,7 +20,6 @@ class UserOneDashboard < Administrate::BaseDashboard
     naverid: Field::String,
     url: Field::String,
     submitted: Field::Boolean,
-    verified: Field::Boolean,
     created_at: Field::DateTime.with_options(
       timezone: "Seoul",
       format: "%Y.%m.%d %H:%M"
@@ -51,7 +49,6 @@ class UserOneDashboard < Administrate::BaseDashboard
   id
   name
   phone
-  code
   app1
   app2
   app3
@@ -59,7 +56,6 @@ class UserOneDashboard < Administrate::BaseDashboard
   app5
   naverid
   url
-  verified
   submitted
   created_at
   updated_at
@@ -78,7 +74,6 @@ class UserOneDashboard < Administrate::BaseDashboard
   app5
   naverid
   url
-  verified
   submitted
   ].freeze
 

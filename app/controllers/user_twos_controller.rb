@@ -35,7 +35,7 @@ class UserTwosController < ApplicationController
             @error = "입력되지 않은 정보가 있습니다."
         elsif !phone.start_with?("010")
             @error = "올바른 휴대폰 번호를 입력해주세요."
-        elsif !true?(agreed) || !true?(agreed)
+        elsif !true?(agreed) || !true?(agreed2)
             @error = "필수 약관에 동의해주세요."
         else
             @user = UserTwo.where(phone: phone).first

@@ -18,7 +18,7 @@ event1 = Event.create(
     color: "#B889DB",
 
     start_date: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
-    end_date: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2021 14:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/1",
     visible: true,
@@ -31,7 +31,7 @@ event2 = Event.create(
     color: "#002060",
 
     start_date: DateTime.strptime("01/22/2021 09:00", "%m/%d/%Y %H:%M"),
-    end_date: DateTime.strptime("02/28/2021 23:59", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2021 14:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/2",
     visible: true,
@@ -45,7 +45,7 @@ event3 = Event.create(
     color: "#002060",
 
     start_date: DateTime.strptime("02/22/2020 09:00", "%m/%d/%Y %H:%M"),
-    end_date: DateTime.strptime("02/28/2020 23:59", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("02/28/2020 14:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/3",
     visible: true,
@@ -58,7 +58,7 @@ event4 = Event.create(
     color: "red",
 
     start_date: DateTime.strptime("05/22/2020 09:00", "%m/%d/%Y %H:%M"),
-    end_date: DateTime.strptime("06/28/2020 23:59", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("06/28/2020 14:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/4",
     visible: false,

@@ -22,7 +22,12 @@ class EventsController < ApplicationController
 
     def apply_one
         @event = Event.find(1)
-        render "apply1"
+        
+        if @event.end_date < Time.now
+            redirect_to "/"
+        else
+            render "apply1"
+        end
     end
 
     def apply_two
@@ -30,6 +35,10 @@ class EventsController < ApplicationController
 
         @selected_prize = params[:prize].to_i
 
-        render "apply2"
+        if @event.end_date < Time.now
+            redirect_to "/"
+        else
+            render "apply2"
+        end
     end
 end

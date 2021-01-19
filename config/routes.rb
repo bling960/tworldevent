@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   post '/users/2/new', to: 'user_twos#create_user_two'
   post '/users/2/submit', to: 'user_twos#submit_user_two'
 
+  get '/user_one/export', to: 'user_ones#export_csv'
+  get '/user_two/export', to: 'user_twos#export_csv'
+
 
   get '/finished', to: 'events#finished'
 end

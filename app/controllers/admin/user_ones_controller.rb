@@ -1,5 +1,10 @@
 module Admin
   class UserOnesController < Admin::ApplicationController
+    def export_csv
+      respond_to do |format|
+         format.csv { send_data UserOne.to_csv }
+      end
+    end
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #

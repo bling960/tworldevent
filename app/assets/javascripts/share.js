@@ -64,17 +64,14 @@ var Share = {
         openInNewTab("http://blog.naver.com/openapi/share?url=" + location.href);
     },
     kakaotalk: function () {
-        // try {
-        //     var url = this.defaultOptions.url;
-
-        //     Kakao.Link.sendScrap({
-        //         requestUrl: url
-        //     });
-
-        // }
-        // catch (e) {
-        //     alert(e.message);
-        // }
+        try {
+            Kakao.Link.sendScrap({
+                requestUrl: location.href
+            });
+        }
+        catch (e) {
+            alert(e.message);
+        }
     },
     facebook: function () {
         openInNewTab("http://www.facebook.com/sharer.php?u=" + location.href);

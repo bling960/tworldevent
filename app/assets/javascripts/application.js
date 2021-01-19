@@ -14,5 +14,10 @@
 //= require activestorage
 //= require libs/jquery-2.1.0.min
 //= require libs/bootstrap.min
+//= require libs/kakao.min
 //= require share
 //= require_tree .
+
+$(document).ready(function() {
+    Kakao.init("fd91668c1400d5c353e5c8a8aa4d6cd9");
+});

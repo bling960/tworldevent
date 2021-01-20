@@ -6,15 +6,26 @@ class EventsController < ApplicationController
     end
 
     def show_one
-        event_id = params[:id]
-        @event = Event.find(event_id)
+        @event = Event.find(1)
 
         @meta = @event.event_ones.first
 
         if @event.end_date < Time.now
             redirect_to "/"
         else
-            render "event" + event_id
+            render "event1"
+        end
+    end
+
+    def show_two
+        @event = Event.find(2)
+
+        # @meta = @event.event_twos.first
+
+        if @event.end_date < Time.now
+            redirect_to "/"
+        else
+            render "event2"
         end
     end
 

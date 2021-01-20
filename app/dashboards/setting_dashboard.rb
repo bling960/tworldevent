@@ -14,6 +14,7 @@ class SettingDashboard < Administrate::BaseDashboard
     description: Field::String,
     blog: Field::String,
     instagram: Field::String,
+    copyright: Field::String,
     created_at: Field::DateTime.with_options(
       timezone: "Seoul",
       format: "%Y.%m.%d %H:%M"

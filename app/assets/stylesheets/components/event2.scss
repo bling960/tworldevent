@@ -36,7 +36,7 @@
     .prize-input ~ label {
         border: 5px dashed rgba(117, 117, 117, .3);
         border-radius: 15px;
-        color: grey;
+        color: #000;
         @include transition;
         .option {
             position: relative;

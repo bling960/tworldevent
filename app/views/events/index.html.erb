@@ -78,24 +78,34 @@
 <% end %>
 
 
-<footer class="d-flex justify-content-center align-items-center pt-5 pb-4">
-    <% if @setting.instagram.blank? %>
-        <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
-            <%= image_tag("share/instagram.png") %>
-        </a>
-    <% else %>
-        <a target="_blank" href="<%= @setting.instagram %>" class="icon-share">
-            <%= image_tag("share/instagram.png") %>
-        </a>
-    <% end %>
+<footer class="d-flex justify-content-center flex-column align-items-center pt-5 pb-4">
+    <p class="d-flex justify-content-center">
+        <% if @setting.instagram.blank? %>
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/instagram.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.instagram %>" class="icon-share">
+                <%= image_tag("share/instagram.png") %>
+            </a>
+        <% end %>
 
-    <% if @setting.blog.blank? %>
-        <a class="icon-share" onclick="alert('준비중입니다.')">
-            <%= image_tag("share/naver.png") %>
-        </a>
-    <% else %>
-        <a target="_blank" href="<%= @setting.blog %>" class="icon-share">
-            <%= image_tag("share/naver.png") %>
-        </a>
-    <% end %>
+        <% if @setting.blog.blank? %>
+            <a class="icon-share" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/naver.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.blog %>" class="icon-share">
+                <%= image_tag("share/naver.png") %>
+            </a>
+        <% end %>
+    </p>
+
+    <p>
+        <% if @setting.copyright.blank? %>
+            COPYRIGHT © PS&Marketing. ALL RIGHTS RESERVED.
+        <% else %>
+            <%= @setting.copyright %>
+        <% end %>
+    </p>
 </footer>

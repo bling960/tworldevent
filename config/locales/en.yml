@@ -45,12 +45,16 @@ en:
       setting:
         one: 통합페이지 설정
         other: 통합페이지 설정
+      event_one:
+        one: 이벤트1 설정
+        other: 이벤트1 설정
   helpers:
     label:
       event:
         title: 이벤트명
-        description: 확진자명
+        description: 이벤트 설명
         color: 배경 색상
+        image: 배경 이미지
         start_date: 시작일자
         end_date: 종료일자
         link: 링크
@@ -58,7 +62,6 @@ en:
         inputs: 수집하는 개인정보
         user_ones: 제출한 사용자
         user_twos: 제출한 사용자
-        image: 배경 이미지
       user_one:
         name: 이름
         phone: 휴대폰번호
@@ -81,4 +84,5 @@ en:
         description: 셋째줄 설명글
         blog: 블로그 링크
         instagram: 인스타그램 링크
+        copyright: 저작권 텍스트
 

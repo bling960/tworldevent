@@ -5,9 +5,11 @@ class EventsController < ApplicationController
         render 'index'
     end
 
-    def show
+    def show_one
         event_id = params[:id]
         @event = Event.find(event_id)
+
+        @meta = @event.event_ones.first
 
         if @event.end_date < Time.now
             redirect_to "/"
@@ -22,6 +24,8 @@ class EventsController < ApplicationController
 
     def apply_one
         @event = Event.find(1)
+
+        @meta = @event.event_ones.first
         
         if @event.end_date < Time.now
             redirect_to "/"
@@ -34,6 +38,7 @@ class EventsController < ApplicationController
         @event = Event.find(2)
 
         @selected_prize = params[:prize].to_i
+        # @meta = @event.event_twos.first
 
         if @event.end_date < Time.now
             redirect_to "/"

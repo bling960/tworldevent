@@ -36,13 +36,13 @@ and renders all form fields for a resource's editable attributes.
   <% page.attributes.each do |attribute| -%>
     <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
     
-      <% if attribute.name == "image" %>
+      <% if attribute.name.start_with?("image") %>
            
         <div class="field-unit__label">
           <label for="product_link"><%= attribute.name %></label>
         </div>
         <div class="field-unit__field">
-          <%= f.file_field :image, direct_upload: true %>
+          <%= f.file_field attribute.name.to_sym, direct_upload: true %>
         </div>
         
       <% else %>

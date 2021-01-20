@@ -9,16 +9,17 @@
     <meta name="author" content="SK텔레콤 PS&M">
     <!-- Open Graph data for Facebook -->
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:title" content="SK텔레콤 PS&M 직영매장 EVENT" />
-    <meta property="og:description" content="PS&Marketing은 SK텔레콤의 유통자회사로 유일한 SK텔레콤 직영스토어 브랜드입니다." />
-    <meta property="og:image" content="" />
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
+
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:url" content=""/>
+    <meta name="twitter:url" content="<%= request.original_url %>"/>
     <meta name="twitter:title" content="SK텔레콤 PS&M 직영매장 EVENT" />
-    <meta name="twitter:description" content="PS&Marketing은 SK텔레콤의 유통자회사로 유일한 SK텔레콤 직영스토어 브랜드입니다." />
-    <meta name="twitter:image:src" content="" />
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' %>

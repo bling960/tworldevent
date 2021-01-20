@@ -4,6 +4,10 @@ class UserOnesController < ApplicationController
            format.csv { send_data UserOne.to_csv }
         end
     end
+
+    def destroy_all
+        UserOne.destroy_all
+    end
     
     def submit_user_one
         name = params[:user_one][:name]

@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SettingDashboard < Administrate::BaseDashboard
+class EventOneDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,21 +8,30 @@ class SettingDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    event: Field::BelongsTo,
+
+    image1: Field::String,
+    image2: Field::String,
+    image3: Field::String,
+    image4: Field::String,
+    image_apps: Field::String,
+    image_steps: Field::String,
+
     id: Field::Number,
-    headline1: Field::String,
-    headline2: Field::String,
-    description: Field::String,
-    blog: Field::String,
-    instagram: Field::String,
-    copyright: Field::String,
-    created_at: Field::DateTime.with_options(
-      timezone: "Seoul",
-      format: "%Y.%m.%d %H:%M"
-    ),
-    updated_at: Field::DateTime.with_options(
-      timezone: "Seoul",
-      format: "%Y.%m.%d %H:%M"
-    ),
+    color: Field::String,
+    text1: Field::String,
+    text2: Field::Text,
+    text3: Field::String,
+    text4: Field::Text,
+    text5: Field::Text,
+    text6: Field::Text,
+    caution1: Field::String,
+    caution2: Field::Text,
+    caution3: Field::String,
+    caution4: Field::Text,
+
+    created_at: Field::DateTime,
+    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,21 +40,34 @@ class SettingDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  headline1
-  headline2
-  description
+  id
+  text1
+  text2
   updated_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  headline1
-  headline2
-  description
-  blog
-  instagram
-  copyright
+  event
+  image1
+  image2
+  image3
+  image4
+  image_apps
+  image_steps
+  id
+  color
+  text1
+  text2
+  text3
+  text4
+  text5
+  text6
+  caution1
+  caution2
+  caution3
+  caution4
   created_at
   updated_at
   ].freeze
@@ -54,12 +76,24 @@ class SettingDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  headline1
-  headline2
-  description
-  blog
-  instagram
-  copyright
+  event
+  image1
+  image2
+  image3
+  image4
+  image_apps
+  image_steps
+  color
+  text1
+  text2
+  text3
+  text4
+  text5
+  text6
+  caution1
+  caution2
+  caution3
+  caution4
   ].freeze
 
   # COLLECTION_FILTERS
@@ -74,10 +108,10 @@ class SettingDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how settings are displayed
+  # Overwrite this method to customize how event ones are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(setting)
-  #   "Setting ##{setting.id}"
+  # def display_resource(event_one)
+  #   "EventOne ##{event_one.id}"
   # end
 end

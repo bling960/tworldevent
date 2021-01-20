@@ -5,6 +5,10 @@ class UserTwosController < ApplicationController
         end
     end
 
+    def destroy_all
+        UserTwo.destroy_all
+    end
+
     def create_user_two
         
         if params[:user_two].nil? 

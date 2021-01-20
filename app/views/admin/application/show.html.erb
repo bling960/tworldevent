@@ -44,7 +44,7 @@ as well as a link to its edit page.
 
       <dd class="attribute-data attribute-data--<%=attribute.html_class%>">
         
-        <% if attribute.name == "image" %>
+        <% if attribute.name.start_with?("image") %>
           <% image_key = attribute.data.try(:key) %>
           <% if image_key.nil? %>
             디폴트 이미지 사용중

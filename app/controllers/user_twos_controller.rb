@@ -1,7 +1,7 @@
 class UserTwosController < ApplicationController
     def export_csv
         respond_to do |format|
-           format.csv { send_data UserOne.to_csv }
+           format.csv { send_data UserTwo.to_csv }
         end
     end
 

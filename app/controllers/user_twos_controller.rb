@@ -7,6 +7,7 @@ class UserTwosController < ApplicationController
 
     def destroy_all
         UserTwo.destroy_all
+        redirect_to "/admin/user_twos"
     end
 
     def create_user_two

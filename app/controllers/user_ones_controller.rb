@@ -7,6 +7,7 @@ class UserOnesController < ApplicationController
 
     def destroy_all
         UserOne.destroy_all
+        redirect_to "/admin/user_ones"
     end
     
     def submit_user_one

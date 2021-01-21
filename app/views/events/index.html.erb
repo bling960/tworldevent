@@ -45,7 +45,7 @@
 
             <div class="section__content">
                 <p class="section__caution">준비중입니다.</p>
-                <h4>(<%= e.description %>)</h4>
+                <h4><%= e.description %></h4>
                 <h2 class="section__title"><%= e.title %></h2>
                 <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </div>
@@ -69,7 +69,7 @@
             <% end %>
 
             <a class="section__content" href="<%= e.link %>">
-                <h4>(<%= e.description %>)</h4>
+                <h4><%= e.description %></h4>
                 <h2 class="section__title"><%= e.title %></h2>
                 <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </a>
@@ -80,12 +80,23 @@
 
 <footer class="d-flex justify-content-center flex-column align-items-center pt-5 pb-4">
     <p class="d-flex justify-content-center">
+
+        <% if @setting.store.blank? %>
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/store.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.store %>" class="icon-share mr-3">
+                <%= image_tag("share/store.png") %>
+            </a>
+        <% end %>
+
         <% if @setting.instagram.blank? %>
             <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
                 <%= image_tag("share/instagram.png") %>
             </a>
         <% else %>
-            <a target="_blank" href="<%= @setting.instagram %>" class="icon-share">
+            <a target="_blank" href="<%= @setting.instagram %>" class="icon-share mr-3">
                 <%= image_tag("share/instagram.png") %>
             </a>
         <% end %>
@@ -101,7 +112,7 @@
         <% end %>
     </p>
 
-    <p>
+    <p class="mt-4 mb-4">
         <% if @setting.copyright.blank? %>
             COPYRIGHT © PS&Marketing. ALL RIGHTS RESERVED.
         <% else %>

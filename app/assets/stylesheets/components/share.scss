@@ -52,6 +52,11 @@
 
 .float + .float-list {
   visibility: hidden;
+  .icon-share {
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 #share:checked ~ .float-list {
@@ -75,13 +80,12 @@
 }
 
 .icon-share {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     display: block;
     margin-bottom: 1rem;
     cursor: pointer;
     background: #fff;
     border-radius: 100%;
     z-index: 990;
-    overflow: hidden;
 }

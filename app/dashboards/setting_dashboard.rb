@@ -14,6 +14,7 @@ class SettingDashboard < Administrate::BaseDashboard
     description: Field::String,
     blog: Field::String,
     instagram: Field::String,
+    store: Field::String,
     copyright: Field::String,
     created_at: Field::DateTime.with_options(
       timezone: "Seoul",
@@ -45,6 +46,7 @@ class SettingDashboard < Administrate::BaseDashboard
   description
   blog
   instagram
+  store
   copyright
   created_at
   updated_at
@@ -59,6 +61,7 @@ class SettingDashboard < Administrate::BaseDashboard
   description
   blog
   instagram
+  store
   copyright
   ].freeze
 

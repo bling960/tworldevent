@@ -9,7 +9,13 @@
     <section class="section">
         <div class="section__margin">
             <div class="text-center">
-                <h4 class="black mb-4">2021 Galaxy S21 출시 기념</h4>
+                <h4 class="black mb-4">
+                    <% if @meta.nil? || @meta.text1.blank? %>
+                        2021 Galaxy S21 출시 기념
+                    <% else %>
+                        <%= @meta.text1.html_safe %>
+                    <% end %>
+                </h4>
                 <div class="mb-5"><%= image_tag("event1/headline.png", class: "img-in-text") %></div>
 
                 <hr>

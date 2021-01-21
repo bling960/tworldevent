@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require libs/jquery-2.1.0.min
+//= require jquery_ujs
 //= require libs/bootstrap.min
 //= require libs/kakao.min
 //= require share

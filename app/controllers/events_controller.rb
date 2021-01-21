@@ -29,6 +29,21 @@ class EventsController < ApplicationController
         end
     end
 
+    def destroy_background
+        @meta = EventOne.all.first
+
+        respond_to do |format|
+            if (@meta.nil?)
+                format.js { render inline: "alert('오류 발생')" }
+            else
+                @meta.image_background.purge
+                @meta.save!
+
+                format.js { render inline: "alert('삭제 완료')" }
+            end
+        end
+    end
+
     def finished
         render "thank"
     end

@@ -50,6 +50,11 @@ as well as a link to its edit page.
             디폴트 이미지 사용중
           <% else %>
             <img src="<%= Cloudinary::Utils.cloudinary_url(image_key, options = {}) %>"/>
+            
+            <% if attribute.name == "image_background" %>
+              <%= link_to "현재 이미지 삭제", image_background_destroy_path(format: :js), format: :js, remote: true, class: "btn" %>
+            <% end %>
+          
           <% end %>
         <% else %>
           <%= render_field attribute, page: page %>

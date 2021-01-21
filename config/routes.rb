@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   get '/user_one/destroy_all', to: 'user_ones#destroy_all'
   get '/user_two/destroy_all', to: 'user_two#destroy_all'
 
+  get '/image_background/destroy', to: 'events#destroy_background'
+  
   get '/finished', to: 'events#finished'
 end

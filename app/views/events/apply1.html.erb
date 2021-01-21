@@ -16,7 +16,13 @@
                         <%= @meta.text1.html_safe %>
                     <% end %>
                 </h4>
-                <div class="mb-5"><%= image_tag("event1/headline.png", class: "img-in-text") %></div>
+                <div class="mb-5">
+                    <% if @meta.nil? || @meta.image1.blank? || @meta.image1.try(:key).nil? %>
+                        <%= image_tag("event1/headline.png", class: "img-in-text") %>
+                    <% else %>
+                        <img class="img-in-text" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image1.key, options = {}) %>" />
+                    <% end %>
+                </div>
 
                 <hr>
 

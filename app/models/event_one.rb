@@ -7,5 +7,6 @@ class EventOne < ApplicationRecord
     has_one_attached :image4
     has_one_attached :image_apps
     has_one_attached :image_steps
+    has_one_attached :image_background
 
 end

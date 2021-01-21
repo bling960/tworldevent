@@ -16,6 +16,7 @@ class EventOneDashboard < Administrate::BaseDashboard
     image4: Field::String,
     image_apps: Field::String,
     image_steps: Field::String,
+    image_background: Field::String,
 
     id: Field::Number,
     color: Field::String,
@@ -56,6 +57,7 @@ class EventOneDashboard < Administrate::BaseDashboard
   image4
   image_apps
   image_steps
+  image_background
   id
   color
   text1
@@ -82,6 +84,7 @@ class EventOneDashboard < Administrate::BaseDashboard
   image4
   image_apps
   image_steps
+  image_background
   color
   text1
   text2

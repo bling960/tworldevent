@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
     def index
-        @events = Event.where(visible: true).order(end_date: :desc)
+        @events = Event.where(visible: true).order(:order)
         @setting = Setting.all.first
         render 'index'
     end

@@ -14,6 +14,7 @@ class EventDashboard < Administrate::BaseDashboard
     user_ones: Field::HasMany,
     user_twos: Field::HasMany,
     id: Field::Number,
+    order: Field::Number,
     title: Field::String,
     description: Field::String,
     color: Field::String,
@@ -62,6 +63,7 @@ class EventDashboard < Administrate::BaseDashboard
   end_date
   link
   visible
+  order
   inputs
   created_at
   updated_at
@@ -79,6 +81,7 @@ class EventDashboard < Administrate::BaseDashboard
   end_date
   link
   visible
+  order
   inputs
   ].freeze
 

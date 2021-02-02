@@ -44,6 +44,8 @@ It renders the `_table` partial to display details about the resources.
     <a style="margin-right: 1rem" class="button mr-2" href="/user_one/destroy_all" onclick="return confirm('정말 모두 삭제하시겠습니까?')">전체 삭제</a>
   <% elsif page.resource_name == "user_two" %>
     <a style="margin-right: 1rem" class="button mr-2" href="/user_two/destroy_all" onclick="return confirm('정말 모두 삭제하시겠습니까?')">전체 삭제</a>
+  <% elsif page.resource_name == "user_three" %>
+    <a style="margin-right: 1rem" class="button mr-2" href="/user_three/destroy_all" onclick="return confirm('정말 모두 삭제하시겠습니까?')">전체 삭제</a>
   <% end %>
 
   <% if page.resource_name == "event" %>

@@ -61,6 +61,8 @@ It renders the `_table` partial to display details about the resources.
     <%= link_to("CSV로 저장", user_one_export_path(format: "csv"), { :class => "button" } ) %>
   <% elsif page.resource_name == "user_two" %>
     <%= link_to("CSV로 저장", user_two_export_path(format: "csv"), { :class => "button" } ) %>
+    <% elsif page.resource_name == "user_three" %>
+    <%= link_to("CSV로 저장", user_three_export_path(format: "csv"), { :class => "button" } ) %>
   <% end %>
 
 </header>

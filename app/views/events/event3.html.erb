@@ -1,0 +1,149 @@
+<% @bg = "linear-gradient(180deg, #F7951C 0%, #FFC33E 7%, #FFC33E 95%, #F7951C 100%)" %>
+
+<% if !@meta.nil? %>
+    <% if !@meta.image_background.blank? && !@meta.image_background.try(:key).nil? %>
+        <% @bg = "url(" + Cloudinary::Utils.cloudinary_url(@meta.image_background.key, options = {}) + ")" %>
+    <% elsif !@meta.color.blank? %>
+        <% @bg = @meta.color %>
+    <% end %>        
+<% end %>
+
+<div class="wrapper event-container event1"
+    style="background: <%= @bg %>"
+>
+    <div class="bg-wrapper">
+        <%= image_tag("event1/left.png", class: "bg-pattern left") %>
+        <%= image_tag("event1/right.png", class: "bg-pattern right") %>
+    </div>
+    
+    <!-- Share button -->
+    <%= render partial: "partials/share" %>
+
+    <!-- Header -->
+    <section class="section text-center">
+        <div class="section__content">
+            
+            <% if @meta.nil? || @meta.image_logo.blank? || @meta.image_logo.try(:key).nil? %>
+                <%= image_tag("event3/logo.png", class: "mb-5") %>
+            <% else %>
+                <img class="mb-5" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image_logo.key, options = {}) %>" />
+            <% end %>
+
+            <h4 class="text-white mb-4">
+                <% if @meta.nil? || @meta.text1.blank? %>
+                    웅진스마트ALL 구매 고객 대상<br>
+                    도서 증정 이벤트
+                <% else %>
+                    <%= @meta.text1.html_safe %>
+                <% end %>
+            </h4>
+
+            <div class="mb-5">
+                <% if @meta.nil? || @meta.image_headline.blank? || @meta.image_headline.try(:key).nil? %>
+                    <%= image_tag("event3/headline.png", class: "img-in-text") %>
+                <% else %>
+                    <img class="img-in-text" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image_headline.key, options = {}) %>" />
+                <% end %>
+            </div>
+
+            <p class="text-white bg-dark d-inline-block px-4 py-1 mb-4">
+                이벤트 기간: <%= @event.start_date.strftime("%Y.%m.%d") %> ~ <%= @event.end_date.strftime("%Y.%m.%d") %>
+            </p>
+
+            <div class="mb-3">
+                <% if @meta.nil? || @meta.image_main.blank? || @meta.image_main.try(:key).nil? %>
+                    <%= image_tag("event3/main.png", class: "img-in-text") %>
+                <% else %>
+                    <img class="img-in-text" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image_main.key, options = {}) %>" />
+                <% end %>
+            </div>
+
+            <p class="black mb-5">
+                <% if @meta.nil? || @meta.text2.blank? %>
+                    <b>SK텔레콤 직영매장 (PS&M매장)에서 웅진스마트ALL을 <br>
+                    구매하신 고객님께 좋은 부모 추천 도서를 선물 드립니다.<br>
+                    (받고 싶은 책 중 한권을  선택하여 응모)</b>
+                <% else %>
+                    <%= @meta.text2.html_safe %>
+                <% end %>
+                
+            </p>
+            <a href="/events/3/apply" class="btn bg-green">이벤트 응모하기</a>
+        </div>
+    </section>
+
+    <!-- event description -->
+    <section class="section text-center">
+        <div class="box">
+
+            <div class="box__content">
+                
+                <% if @meta.nil? || @meta.image_content.blank? || @meta.image_content.try(:key).nil? %>
+                    <%= image_tag("event3/content.jpg", class: "mb-3 img-in-text") %>
+                <% else %>
+                    <img class="mb-3 img-in-text" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image_content.key, options = {}) %>" />
+                <% end %>
+
+            </div>
+
+        </div>
+        <div class="text-center mt-5">
+            <a href="/events/3/apply" class="btn bg-green">응모하기</a>
+        </div>
+    </section>
+
+    <!-- warnings -->
+    <section class="section">
+        <div class="section__content">
+            <h3 class="mb-4 black">
+            
+                <% if @meta.nil? || @meta.text3_headline.blank? %>
+                    유의사항
+                <% else %>
+                    <%= @meta.text3_headline.html_safe %>
+                <% end %>
+
+            </h3>
+            <p class="text-left mb-5">
+                <% if @meta.nil? || @meta.text3.blank? %>
+                    - 이 이벤트는 휴대폰 번호 1개당 1회 응모하실 수 있습니다.<br>
+                    - 비정상적이거나 불법적인 방법으로 이벤트에 참여하신 경우, 추첨 대상에서 제외되거나 당첨이 취소될 수 있습니다.<br>
+                    - 법인 고객님 및 만 14세 미만 고객님은 이 이벤트에 응모하실 수 없습니다.<br>
+                    - 이 이벤트는 ㈜ 피에스앤마케팅의 사정에 따라 변경 또는 조기 종료될 수 있습니다.<br>
+                    - SK텔레콤은 고객님이 정보를 잘못 입력해 경품을 받지 못하신 경우에 대해 책임지지 않습니다.<br>
+                    - 이벤트 응모 시 입력하신 휴대폰 번호는 이벤트 종료 후 3개월 이내 파기됩니다.<br>
+                    - 이 이벤트는 SK텔레콤의 자회사 피에스앤마케팅에서 운영합니다.
+                <% else %>
+                    <%= @meta.text3.html_safe %>
+                <% end %>
+            </p>
+
+            <h3 class="mb-4 black pt-5">
+            
+                <% if @meta.nil? || @meta.text4_headline.blank? %>
+                    경품 유의사항
+                <% else %>
+                    <%= @meta.text4_headline.html_safe %>
+                <% end %>
+
+            </h3>
+            <p class="text-left mb-5">
+                <% if @meta.nil? || @meta.text4.blank? %>
+                    - 경품은 회사의 사정에 따라 변경될 수 있습니다. <br>
+                    - SK텔레콤 ps&m매장에서 웅진스마트올 상품을 구매하지 않은 경우, 당첨은 취소됩니다.<br>
+                    - 당첨된 후, 구매를 취소한 경우 경품도 함께 반환해야 합니다. <br>
+                    - 5만원 이상 금액의 경우 제세공과금은 ㈜피에스앤마케팅 이 부담하며,<br>
+                    &nbsp;  이 과정에서 제세공과금 대납을 위한 개인정보 수취가 필요합니다. <br>
+                    &nbsp;  추가적인 개인정보 수취에 동의하지 않을 경우, 제세공과금은 당첨자 본인 부담입니다 (제세공과금 22%) <br>
+                <% else %>
+                    <%= @meta.text4.html_safe %>
+                <% end %>
+            </p>
+        </div>
+    </section>
+        
+</div>
+
+
+<!-- meta tags -->
+<%= render partial: "partials/img_event3" %>

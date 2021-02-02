@@ -75,7 +75,7 @@
         <div class="box">
 
             <div class="box__content">
-                <p class="mb-3"><strong>2021.01.22 ~ 2021.02.28</strong></p>
+                <p class="mb-3"><strong><%= @event.start_date.strftime("%Y.%m.%d") %> ~ <%= @event.end_date.strftime("%Y.%m.%d") %></strong></p>
                 
                 <% if @meta.nil? || @meta.image3.blank? || @meta.image3.try(:key).nil? %>
                     <%= image_tag("event1/headline2.png", class: "mb-3 img-in-text") %>

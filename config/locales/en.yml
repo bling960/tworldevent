@@ -42,12 +42,18 @@ en:
       user_two:
         one: 이벤트2 응모자
         other: 이벤트2 응모자들
+      user_three:
+        one: 이벤트3 응모자
+        other: 이벤트3 응모자들
       setting:
         one: 통합페이지 설정
         other: 통합페이지 설정
       event_one:
         one: 이벤트1 설정
         other: 이벤트1 설정
+      event_three:
+        one: 이벤트3 설정
+        other: 이벤트3 설정
   helpers:
     label:
       event:
@@ -75,6 +81,13 @@ en:
         name: 이름
         phone: 휴대폰번호
         code: 인증번호
+        submitted: 제출완료여부
+        prize: 선택한 경품
+        shop: 매장 코드
+        event_id: 관련 이벤트
+      user_three:
+        name: 이름
+        phone: 휴대폰번호
         submitted: 제출완료여부
         prize: 선택한 경품
         shop: 매장 코드

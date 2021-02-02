@@ -1,8 +1,8 @@
-class UserOne < ApplicationRecord
+class UserThree < ApplicationRecord
     belongs_to :event
 
     require "csv"
-
+    
     def self.to_csv
         bom = %w(EF BB BF).map { |e| e.hex.chr }.join
         CSV.generate(bom) do |csv|

@@ -29,6 +29,18 @@ class EventsController < ApplicationController
         end
     end
 
+    def show_three
+        @event = Event.find(3)
+
+        @meta = @event.event_threes.first
+
+        if @event.end_date < Time.now
+            redirect_to "/"
+        else
+            render "event3"
+        end
+    end
+
     def destroy_background
         @meta = EventOne.all.first
 
@@ -70,6 +82,18 @@ class EventsController < ApplicationController
             redirect_to "/"
         else
             render "apply2"
+        end
+    end
+
+    def apply_three
+        @event = Event.find(3)
+
+        @meta = @event.event_threes.first
+
+        if @event.end_date < Time.now
+            redirect_to "/"
+        else
+            render "apply3"
         end
     end
 end

@@ -81,3 +81,12 @@
 .line-height-low {
     line-height: 1.4;
 }
+
+#finished {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    min-height: 100vh;
+}

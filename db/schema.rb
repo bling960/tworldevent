@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_084544) do
+ActiveRecord::Schema.define(version: 2021_02_02_103926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,27 @@ ActiveRecord::Schema.define(version: 2021_01_21_084544) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "event_threes", force: :cascade do |t|
+    t.string "color"
+    t.text "text1"
+    t.text "text2"
+    t.string "text3_headline"
+    t.text "text3"
+    t.string "text4_headline"
+    t.text "text4"
+    t.text "text5"
+    t.text "text6"
+    t.text "text7"
+    t.text "option1"
+    t.text "option2"
+    t.text "option3"
+    t.text "option4"
+    t.text "option5"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -104,6 +125,17 @@ ActiveRecord::Schema.define(version: 2021_01_21_084544) do
     t.boolean "app5"
     t.string "naverid"
     t.string "url"
+    t.boolean "submitted"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_threes", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "prize"
+    t.string "shop"
     t.boolean "submitted"
     t.integer "event_id"
     t.datetime "created_at", null: false

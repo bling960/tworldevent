@@ -5,5 +5,5 @@ class Event < ApplicationRecord
     has_many :user_twos
 
     has_many :event_ones
-    # has_many :event_twos
+    has_many :event_threes
 end

@@ -1,4 +1,16 @@
-<div class="wrapper event-container event1">
+<% @bg = "linear-gradient(180deg, #F0C5FF 0%, #D0CAFF 7%, #D0CAFF 95%, #F0C5FF 100%)" %>
+
+<% if !@meta.nil? %>
+    <% if !@meta.image_background.blank? && !@meta.image_background.try(:key).nil? %>
+        <% @bg = "url(" + Cloudinary::Utils.cloudinary_url(@meta.image_background.key, options = {}) + ")" %>
+    <% elsif !@meta.color.blank? %>
+        <% @bg = @meta.color %>
+    <% end %>        
+<% end %>
+
+<div class="wrapper event-container event1"
+    style="background: <%= @bg %>"
+>
     <%= image_tag("event1/left.png", class: "bg-pattern left") %>
     <%= image_tag("event1/right.png", class: "bg-pattern right") %>
 

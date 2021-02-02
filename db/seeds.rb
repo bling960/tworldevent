@@ -40,12 +40,12 @@ event2 = Event.create(
 
 
 event3 = Event.create(
-    description: "SK텔레콤 브랜드 이벤트",
-    title: "Galaxy S21 개통고객 구독♡구독 경품 이벤트",
-    color: "#002060",
+    description: "웅진스마트ALL 구매 고객 대상 도서 증정 이벤트",
+    title: "아이는 스마트올 부모는 스마트북",
+    color: "orange",
 
-    start_date: DateTime.strptime("02/22/2020 09:00", "%m/%d/%Y %H:%M"),
-    end_date: DateTime.strptime("02/28/2020 14:59", "%m/%d/%Y %H:%M"),
+    start_date: DateTime.strptime("02/15/2020 09:00", "%m/%d/%Y %H:%M"),
+    end_date: DateTime.strptime("03/15/2020 14:59", "%m/%d/%Y %H:%M"),
 
     link: "/events/3",
     visible: true,

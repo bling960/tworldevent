@@ -103,6 +103,12 @@ img {
 .orange {
     color: $orange;
 }
+.bg-green {
+    background-color: #366854;
+    &:hover {
+        background-color: #27463a;
+    }
+}
 
 #detectWidth {
     display: none;

@@ -82,7 +82,7 @@ to display a collection of resources in an HTML table.
           ) if show_action? :edit, resource%></td>
         <% end %>
 
-        <% if !(collection_presenter.resource_name == "event" && resource.id < 3) && collection_presenter.resource_name != "event_one" && collection_presenter.resource_name != "event_two" && collection_presenter.resource_name != "setting" %>
+        <% if !(collection_presenter.resource_name == "event" && resource.id <= 3) && collection_presenter.resource_name != "event_one" && collection_presenter.resource_name != "event_two" && collection_presenter.resource_name != "setting" %>
           <% if valid_action? :destroy, collection_presenter.resource_name %>
             <td><%= link_to(
               t("administrate.actions.destroy"),

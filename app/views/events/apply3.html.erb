@@ -180,6 +180,12 @@
             </p>
         </div>
     </section>
+
+    <% if @meta.nil? || @meta.image_main.blank? || @meta.image_main.try(:key).nil? %>
+        <%= image_tag("event3/main.png", class: "img-at-bottom") %>
+    <% else %>
+        <img class="img-at-bottom" src="<%= Cloudinary::Utils.cloudinary_url(@meta.image_main.key, options = {}) %>" />
+    <% end %>
         
 </div>
 

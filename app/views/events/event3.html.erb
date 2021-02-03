@@ -31,7 +31,7 @@
 
             <h4 class="text-white mb-4">
                 <% if @meta.nil? || @meta.text1.blank? %>
-                    웅진스마트ALL 구매 고객 대상<br>
+                    웅진스마트ALL 가입 상담 고객 대상<br>
                     도서 증정 이벤트
                 <% else %>
                     <%= @meta.text1.html_safe %>
@@ -88,7 +88,7 @@
 
         </div>
         <div class="text-center mt-5">
-            <a href="/events/3/apply" class="btn bg-green">응모하기</a>
+            <a href="/events/3/apply" class="btn bg-green">이벤트 응모하기</a>
         </div>
     </section>
 

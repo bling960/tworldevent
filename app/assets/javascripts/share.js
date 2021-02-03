@@ -43,30 +43,19 @@ function openInNewTab(url) {
 }
 
 var Share = {
-    defaultOptions: {
 
-        twitterButton: "",
-        naverButton: "",
-        kakaotalkButton: "",
-        facebookButton: "",
-        urlcopyButton: "",
-
-        kakaoJavascriptID: "",
-        facebookAppID: "",
-        url: "",
-        title: "",
-        solutionTitle: ""
-    },
+    currentLink: location.href.replace("/apply", ""),
+    
     twitter: function () {
-        openInNewTab("https://twitter.com/intent/tweet?url=" + location.href);
+        openInNewTab("https://twitter.com/intent/tweet?url=" + this.currentLink);
     },
     naver: function () {
-        openInNewTab("http://blog.naver.com/openapi/share?url=" + location.href);
+        openInNewTab("http://blog.naver.com/openapi/share?url=" + this.currentLink);
     },
     kakaotalk: function () {
         try {
             Kakao.Link.sendScrap({
-                requestUrl: location.href
+                requestUrl: this.currentLink
             });
         }
         catch (e) {
@@ -74,10 +63,10 @@ var Share = {
         }
     },
     facebook: function () {
-        openInNewTab("http://www.facebook.com/sharer.php?u=" + location.href);
+        openInNewTab("http://www.facebook.com/sharer.php?u=" + this.currentLink);
     },
     copyLink: function () {
-        copyTextToClipboard(location.href);
+        copyTextToClipboard(this.currentLink);
     }
 };
 

@@ -32,6 +32,11 @@ class EventThreeDashboard < Administrate::BaseDashboard
     text5: Field::Text,
     text6: Field::Text,
     text7: Field::Text,
+    option1: Field::Text,
+    option2: Field::Text,
+    option3: Field::Text,
+    option4: Field::Text,
+    option5: Field::Text,
 
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -53,6 +58,8 @@ class EventThreeDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   event
+  color
+
   image_logo
   image_headline
   image_main
@@ -64,8 +71,6 @@ class EventThreeDashboard < Administrate::BaseDashboard
   image_option5
   image_thanks
 
-  id
-  color
   text1
   text2
   text3_headline
@@ -75,6 +80,13 @@ class EventThreeDashboard < Administrate::BaseDashboard
   text5
   text6
   text7
+
+  option1
+  option2
+  option3
+  option4
+  option5
+
   created_at
   updated_at
   ].freeze
@@ -83,6 +95,7 @@ class EventThreeDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  color
   image_logo
   image_headline
   image_main
@@ -93,7 +106,6 @@ class EventThreeDashboard < Administrate::BaseDashboard
   image_option4
   image_option5
   image_thanks
-  color
   text1
   text2
   text3_headline
@@ -103,6 +115,12 @@ class EventThreeDashboard < Administrate::BaseDashboard
   text5
   text6
   text7
+
+  option1
+  option2
+  option3
+  option4
+  option5
   ].freeze
 
   # COLLECTION_FILTERS

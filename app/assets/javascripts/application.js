@@ -23,14 +23,16 @@
 var ONLYONETIME_EXECUTE = null;
 
 $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    var box = $('.video-overlay').height();
-    var header = $('header').height();
+    if (document.querySelector(".video-overlay")) {
+        var scroll = $(window).scrollTop();
+        var box = $('.video-overlay').height();
+        var header = $('header').height();
 
-    if (scroll >= box - header) {
-      $("header").addClass("background-header");
-    } else {
-      $("header").removeClass("background-header");
+        if (scroll >= box - header) {
+        $("header").addClass("background-header");
+        } else {
+        $("header").removeClass("background-header");
+        }
     }
 });
 
@@ -43,15 +45,7 @@ $(document).ready(function() {
 
     var video = document.getElementById("bg-video");
 
-    if (ONLYONETIME_EXECUTE == null) {   
-
-        video.play();
-
-        ONLYONETIME_EXECUTE = 0;
-    }
-
-    document.body.addEventListener('touchstart', function(e){
-    
+    if (video) {
         if (ONLYONETIME_EXECUTE == null) {   
 
             video.play();
@@ -59,6 +53,16 @@ $(document).ready(function() {
             ONLYONETIME_EXECUTE = 0;
         }
 
-    }, false);
+        document.body.addEventListener('touchstart', function(e){
+        
+            if (ONLYONETIME_EXECUTE == null) {   
+
+                video.play();
+
+                ONLYONETIME_EXECUTE = 0;
+            }
+
+        }, false);
+    }
 });
 

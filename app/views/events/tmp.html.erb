@@ -32,8 +32,8 @@
             <% end %>
         </h4>
 
-        <div>
-            <%= image_tag("logo_white.png", class: "section__logo mb-4", data: {"aos" => "fade-up"}) %>
+        <div class="mb-4">
+            <%= image_tag("logo_white.png", class: "section__logo", data: {"aos" => "fade-up"}) %>
         </div>
 
         <h6 data-aos="fade-up" class="font-weight-normal text-white px-2">
@@ -91,7 +91,13 @@
 
 <section class="section">
     <div class="section__content pb-4">
-        <h4>현재 진행중인 혜택과 EVENT</h4>
+        <h4>
+            <% if @setting.nil? || @setting.headline_event.blank? %>
+                현재 진행중인 혜택과 EVENT
+            <% else %>
+                <%= @setting.headline_event %>
+            <% end %>
+        </h4>
     </div>
 </section>
 

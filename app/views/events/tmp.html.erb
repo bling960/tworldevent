@@ -187,11 +187,11 @@
         <% end %>
 
         <% if @setting.kakao.blank? %>
-            <a class="icon-share mr-3 d-flex align-items-center" onclick="alert('준비중입니다.')">
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
                 <%= image_tag("share/kakao_channel.png") %>
             </a>
         <% else %>
-            <a target="_blank" href="<%= @setting.kakao %>" class="icon-share mr-3  d-flex align-items-center">
+            <a target="_blank" href="<%= @setting.kakao %>" class="icon-share mr-3">
                 <%= image_tag("share/kakao_channel.png") %>
             </a>
         <% end %>

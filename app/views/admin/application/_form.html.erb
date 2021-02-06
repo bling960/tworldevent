@@ -39,7 +39,10 @@ and renders all form fields for a resource's editable attributes.
       <% if attribute.name.start_with?("image") %>
            
         <div class="field-unit__label">
-          <label for="product_link"><%= attribute.name %></label>
+          <label for="product_link"><%= t(
+            "helpers.label.#{resource_name}.#{attribute.name}",
+            default: attribute.name.titleize,
+          ) %></label>
         </div>
         <div class="field-unit__field">
           <%= f.file_field attribute.name.to_sym, direct_upload: true %>

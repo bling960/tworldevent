@@ -12,5 +12,6 @@
  *
  *= require_self
  *= require libs/bootstrap.min
+ *= require libs/aos.min
  *= require main
  */

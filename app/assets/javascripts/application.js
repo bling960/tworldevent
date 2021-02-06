@@ -16,9 +16,49 @@
 //= require jquery_ujs
 //= require libs/bootstrap.min
 //= require libs/kakao.min
+//= require libs/aos.min
 //= require share
 //= require_tree .
 
+var ONLYONETIME_EXECUTE = null;
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    var box = $('.video-overlay').height();
+    var header = $('header').height();
+
+    if (scroll >= box - header) {
+      $("header").addClass("background-header");
+    } else {
+      $("header").removeClass("background-header");
+    }
+});
+
 $(document).ready(function() {
     Kakao.init("fd91668c1400d5c353e5c8a8aa4d6cd9");
+    AOS.init({
+        // Global settings:
+        // startEvent: 'turbolinks:load', // name of the event dispatched on the document, that AOS should initialize on
+    });
+
+    var video = document.getElementById("bg-video");
+
+    if (ONLYONETIME_EXECUTE == null) {   
+
+        video.play();
+
+        ONLYONETIME_EXECUTE = 0;
+    }
+
+    document.body.addEventListener('touchstart', function(e){
+    
+        if (ONLYONETIME_EXECUTE == null) {   
+
+            video.play();
+
+            ONLYONETIME_EXECUTE = 0;
+        }
+
+    }, false);
 });
+

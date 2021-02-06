@@ -6,9 +6,16 @@
 <section class="section">
     <div class="section__content">
         <%= image_tag("logo.png", class: "section__logo mb-4") %>
-        <h4><%= @setting.headline1.html_safe %></h4>
-        <h1 class="mb-3"><%= @setting.headline2.html_safe %></h1>
-        <p><%= @setting.description.html_safe %></p>
+        
+        <h4>
+            <%= @setting.headline1.html_safe %>
+        </h4>
+        <h1 class="mb-3">
+            <%= @setting.headline2.html_safe %>
+        </h1>
+        <p>
+            <%= @setting.description.html_safe %>
+        </p>
     </div>
 </section>
 

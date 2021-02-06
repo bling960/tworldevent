@@ -1,0 +1,31 @@
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <div>
+                        <a href="/tmp" class="logo">
+                            <%= image_tag("logo_white.png", class: "logo") %> <!-- section__logo -->
+                        </a>
+                    </div>
+                    <!-- ***** Menu Start ***** -->
+                    <div class="nav">
+                        <div class="nav-item pr-0 pt-2">
+                            <% if @setting.store.blank? %>
+                                <a onclick="alert('준비중입니다.')">매장찾기</a>
+                            <% else %>
+                                <a target="_blank" href="<%= @setting.store %>">매장찾기</a>
+                            <% end %>
+                        </div> 
+                        <div class="nav-item">
+                            <!-- Share button -->
+                            <%= render partial: "partials/share" %>
+                        </div>
+                    </div>        
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   get '/user_three/destroy_all', to: 'user_threes#destroy_all'
 
   get '/image_background/destroy', to: 'events#destroy_background'
+
+  get '/tmp', to: 'events#tmp'
   
   get '/finished', to: 'events#finished'
 end

@@ -96,4 +96,10 @@ class EventsController < ApplicationController
             render "apply3"
         end
     end
+
+    def tmp
+        @events = Event.where(visible: true).order(:order)
+        @setting = Setting.all.first
+        render 'tmp'
+    end
 end

@@ -103,6 +103,12 @@ img {
 .orange {
     color: $orange;
 }
+.bg-orange {
+    background-color: $orange;
+}
+.bg-red {
+    background-color: $red;
+}
 .bg-green {
     background-color: #366854;
     &:hover {

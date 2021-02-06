@@ -11,6 +11,7 @@ $orange-purple: #EFB7EF !default;
 $text-color: #333 !default;
 $yellow: #FFFAB5 !default;
 $orange: #F5A623 !default;
+$red: #db412d !default;
 
 
 // Utils
@@ -20,6 +21,7 @@ $orange: #F5A623 !default;
 @import "utils/global";
 
 // Sections
+@import "components/header";
 @import "components/home";
 @import "components/event1";
 @import "components/event2";

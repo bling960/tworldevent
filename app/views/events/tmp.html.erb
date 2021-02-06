@@ -1,0 +1,208 @@
+
+
+<!-- header -->
+<%= render partial: "partials/header" %>
+
+<!-- intro -->
+<section class="section video-container">
+
+    <!-- video -->
+    <video playsinline autoplay loop muted defaultMuted autobuffer id="bg-video">
+        <source src="<%= image_url('bg-video.mp4') %>" type="video/mp4">
+    </video>
+
+    <div class="section__content video-overlay">
+        <h4 data-aos="fade-up" data-aos-delay="500">
+            <%= @setting.headline1.html_safe %>
+        </h4>
+        <h1 class="mt-3 mb-4" data-aos="fade-down" data-aos-delay="500">
+            <%= @setting.headline2.html_safe %>
+        </h1>
+    </div>
+</section>
+
+<!-- section -->
+<section class="section bg-red ">
+    <div class="section__content">
+        <h4 data-aos="fade-down" class="orange-text py-2 mb-4">
+            <% if @setting.nil? || @setting.headline3.blank? %>
+                PS&Marketing
+            <% else %>
+                <%= @setting.headline3 %>
+            <% end %>
+        </h4>
+        <h5 data-aos="fade-up" class="font-weight-normal black px-2">
+            <% if @setting.nil? || @setting.description.blank? %>
+                피에스앤마케팅은 SK텔레콤의 유통자회사로<br class="d-none d-sm-block">
+                유일한 SK텔레콤 직영매장 브랜드입니다.<br class="d-none d-sm-block">
+                직영점은 T월드 간판에 PS&M 표기가 있습니다.
+            <% else %>
+                <%= @setting.description.html_safe %>
+            <% end %>
+        </h5>
+    </div>
+</section>
+
+<!-- section -->
+<section class="section">
+    <div class="section__content">
+        <h5 data-aos="fade-up" class="mb-5">
+            <% if @setting.nil? || @setting.description2.blank? %>
+                월 <span class="red">100원</span>으로 즐기는
+                당신의 초<span class="red">[구독]</span>생활<br>
+                구독서비스도 SK텔레콤 직영매장에서 가입하시고,<br class="d-none d-sm-block">
+                다양한 혜택과 이벤트를 즐겨보세요!
+            <% else %>
+                <%= @setting.description2.html_safe %>
+            <% end %>
+        </h5>
+
+        <!-- 이미지 -->
+        <div class="mb-5" data-aos="fade-up" >
+            <% if @setting.nil? || @setting.image_content.blank? || @setting.image_content.try(:key).nil? %>
+                <%= image_tag("content.png", class: "img-in-text") %>
+            <% else %>
+                <img class="img-in-text" src="<%= Cloudinary::Utils.cloudinary_url(@setting.image_content.key, options = {}) %>" />
+            <% end %>
+        </div>
+
+        <!-- 매장 찾기 버튼 -->
+        <div class="mb-3" data-aos="fade-up" >
+            <% if @setting.store.blank? %>
+                <a class="btn btn-red" onclick="alert('준비중입니다.')">
+                    <small>우리동네 직영점</small><br>
+                    홈페이지 찾기
+                </a>
+            <% else %>
+                <a target="_blank" href="<%= @setting.store %>" class="btn btn-red">
+                    <small>우리동네 직영점</small><br>
+                    홈페이지 찾기
+                </a>
+            <% end %>
+        </div>
+
+    </div>
+</section>
+
+<!-- loop events -->
+<% @events.each do |e| %>
+
+    <% @bg = "https://i.ibb.co/7KKhkFR/Return-key-in-the-shape-of-New-Zealand-series.jpg" %>
+    <% if !e.image.nil? && !e.image.try(:key).nil? %>
+        <% @bg = Cloudinary::Utils.cloudinary_url(e.image.key, options = {}) %>
+    <% end %>
+
+    <!-- 프로젝트 기간 종료시 -->
+    <% if e.end_date < Time.now %>
+        <section 
+            class="section event finished"
+            style="background-image: url('<%= @bg %>');">
+            <div class="section__overlay"></div>
+
+            <div class="section__content">
+                <p class="section__caution">종료된 이벤트입니다.</p>
+                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
+            </div>
+
+        </section>
+
+    <!-- 링크 미연동시 -->
+    <% elsif e.link.nil? %>
+        <section 
+            class="section event unstarted"
+            style="background-image: url('<%= @bg %>');">
+            <div class="section__overlay"></div>
+
+            <div class="section__content">
+                <p class="section__caution">준비중입니다.</p>
+                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
+            </div>
+
+        </section>
+
+    <!-- 진행중 이벤트 -->
+    <% else %>
+        <section
+            class="section event ongoing"
+            style="background-image: url('<%= @bg %>');">
+            
+            <% if e.color.nil? || e.color.blank? %>
+                <div class="section__overlay"
+                    style="background-color: #9013FE">
+                </div>
+            <% else %>
+                <div class="section__overlay"
+                    style="background-color: <%= e.color %>">
+                </div>
+            <% end %>
+
+            <a class="section__content" href="<%= e.link %>">
+                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
+            </a>
+        </section>
+    <% end %>
+<% end %>
+
+
+<footer class="d-flex justify-content-center flex-column align-items-center pt-5 pb-4">
+    <p class="d-flex justify-content-center">
+
+        <% if @setting.instagram.blank? %>
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/instagram.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.instagram %>" class="icon-share mr-3">
+                <%= image_tag("share/instagram.png") %>
+            </a>
+        <% end %>
+
+        <% if @setting.blog.blank? %>
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/naver.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.blog %>" class="icon-share">
+                <%= image_tag("share/naver.png") %>
+            </a>
+        <% end %>
+
+        <% if @setting.youtube.blank? %>
+            <a class="icon-share mr-3" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/youtube.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.youtube %>" class="icon-share mr-3">
+                <%= image_tag("share/youtube.png") %>
+            </a>
+        <% end %>
+
+        <% if @setting.kakao.blank? %>
+            <a class="icon-share mr-3 d-flex align-items-center" onclick="alert('준비중입니다.')">
+                <%= image_tag("share/kakao_channel.png") %>
+            </a>
+        <% else %>
+            <a target="_blank" href="<%= @setting.kakao %>" class="icon-share mr-3  d-flex align-items-center">
+                <%= image_tag("share/kakao_channel.png") %>
+            </a>
+        <% end %>
+    </p>
+
+    <p class="mt-4 mb-4 px-4 text-center">
+        <% if @setting.copyright.blank? %>
+            COPYRIGHT © PS&Marketing. ALL RIGHTS RESERVED.
+        <% else %>
+            <%= @setting.copyright.html_safe %>
+        <% end %>
+    </p>
+</footer>
+
+
+<!-- meta tags -->
+<%= render partial: "partials/img_general" %>

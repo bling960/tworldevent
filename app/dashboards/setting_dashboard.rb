@@ -9,12 +9,18 @@ class SettingDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    image_background: Field::String,
+    image_content: Field::String,
     headline1: Field::String,
     headline2: Field::String,
+    headline3: Field::String,
     description: Field::String,
+    description2: Field::Text,
     blog: Field::String,
     instagram: Field::String,
     store: Field::String,
+    youtube: Field::String,
+    kakao: Field::String,
     copyright: Field::String,
     created_at: Field::DateTime.with_options(
       timezone: "Seoul",
@@ -41,12 +47,18 @@ class SettingDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  image_background
   headline1
   headline2
+  headline3
   description
+  description2
+  image_content
+  store
   blog
   instagram
-  store
+  youtube
+  kakao
   copyright
   created_at
   updated_at
@@ -56,12 +68,18 @@ class SettingDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  image_background
   headline1
   headline2
+  headline3
   description
+  description2
+  image_content
+  store
   blog
   instagram
-  store
+  youtube
+  kakao
   copyright
   ].freeze
 

@@ -93,11 +93,17 @@ en:
         shop: 매장 코드
         event_id: 관련 이벤트
       setting:
-        headline1: 첫째줄 헤드라인
-        headline2: 둘째줄 헤드라인
-        description: 셋째줄 설명글
+        headline1: 섹션1 첫째줄 헤드라인
+        headline2: 섹션1 둘째줄 헤드라인
+        headline3: 섹션2 헤드라인
+        description: 섹션2 설명글
+        description2: 섹션3 설명글
         blog: 블로그 링크
         instagram: 인스타그램 링크
         store: 매장찾기 링크
+        youtube: 유튜브 링크
+        kakao: 카카오 채널 링크
+        image_background: 배경 비디오
+        image_content: 섹션3 이미지
         copyright: 저작권 텍스트
 

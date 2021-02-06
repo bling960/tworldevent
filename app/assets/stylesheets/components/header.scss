@@ -31,10 +31,10 @@ $bg-nav-height: 75px;
     }
   }
   
-  .background-header .logo img {
-    -webkit-filter: invert(1);
-    filter: invert(1);
-  }
+//   .background-header .logo img {
+//     -webkit-filter: invert(1);
+//     filter: invert(1);
+//   }
 
   .background-header .main-nav .nav .nav-item a {
     color: #232d39!important;
@@ -266,9 +266,6 @@ $bg-nav-height: 75px;
   }
 
   @media (max-width: 540px) {
-    .header-area .main-nav .logo {
-        display: none;
-    }
     .header-area .main-nav .nav .nav-item {
         padding-left: 25px;
     }
@@ -278,4 +275,9 @@ $bg-nav-height: 75px;
             height: 70px;
         }
     }
+  }
+  @media (min-width: 768px) {
+      .section__content h6 {
+          font-size: 1.1rem;
+      }
   }

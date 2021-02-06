@@ -31,6 +31,11 @@
                 <%= @setting.headline3 %>
             <% end %>
         </h4>
+
+        <div>
+            <%= image_tag("logo_white.png", class: "section__logo mb-5", data: {"aos" => "fade-up", "aos-delay" => "100"}) %>
+        </div>
+
         <h6 data-aos="fade-up" data-aos-delay="200" class="font-weight-normal text-white px-2">
             <% if @setting.nil? || @setting.description.blank? %>
                 피에스앤마케팅은 SK텔레콤의 유통자회사로<br class="d-none d-sm-block">

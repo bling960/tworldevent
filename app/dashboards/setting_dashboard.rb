@@ -16,6 +16,7 @@ class SettingDashboard < Administrate::BaseDashboard
     headline3: Field::String,
     description: Field::String,
     description2: Field::Text,
+    headline_event: Field::String,
     blog: Field::String,
     instagram: Field::String,
     store: Field::String,
@@ -54,6 +55,7 @@ class SettingDashboard < Administrate::BaseDashboard
   description
   description2
   image_content
+  headline_event
   store
   blog
   instagram
@@ -75,6 +77,7 @@ class SettingDashboard < Administrate::BaseDashboard
   description
   description2
   image_content
+  headline_event
   store
   blog
   instagram

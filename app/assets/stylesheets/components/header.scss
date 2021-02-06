@@ -281,3 +281,11 @@ $bg-nav-height: 75px;
           font-size: 1.1rem;
       }
   }
+  @media (min-width: 576px) {
+    .mb-sm-5 {
+        margin-bottom: 3rem!important;
+    }
+    .mb-sm-4 {
+        margin-bottom: 2rem!important;
+    }
+}

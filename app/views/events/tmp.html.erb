@@ -24,7 +24,7 @@
 <!-- section -->
 <section class="section bg-red ">
     <div class="section__content">
-        <h4 data-aos="fade-up" class="orange-text py-2 mb-4">
+        <h4 data-aos="fade-up" class="orange-text py-2 mb-5 mb-sm-4">
             <% if @setting.nil? || @setting.headline3.blank? %>
                 PS&Marketing
             <% else %>
@@ -32,7 +32,7 @@
             <% end %>
         </h4>
 
-        <div class="mb-4">
+        <div class="mb-3 mb-sm-5">
             <%= image_tag("logo_white.png", class: "section__logo", data: {"aos" => "fade-up"}) %>
         </div>
 

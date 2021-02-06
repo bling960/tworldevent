@@ -13,7 +13,7 @@
                     <div class="nav">
                         <div class="nav-item pr-0 pt-2">
                             <% if @setting.store.blank? %>
-                                <a onclick="alert('준비중입니다.')">매장찾기</a>
+                                <a onclick="alert('준비중입니다.')">직영매장 찾기</a>
                             <% else %>
                                 <a target="_blank" href="<%= @setting.store %>">매장찾기</a>
                             <% end %>

@@ -24,14 +24,14 @@
 <!-- section -->
 <section class="section bg-red ">
     <div class="section__content">
-        <h4 data-aos="fade-down" class="orange-text py-2 mb-4">
+        <h4 data-aos="fade-up" class="orange-text py-2 mb-4">
             <% if @setting.nil? || @setting.headline3.blank? %>
                 PS&Marketing
             <% else %>
                 <%= @setting.headline3 %>
             <% end %>
         </h4>
-        <h5 data-aos="fade-up" class="font-weight-normal black px-2">
+        <h6 data-aos="fade-up" data-aos-delay="200" class="font-weight-normal text-white px-2">
             <% if @setting.nil? || @setting.description.blank? %>
                 피에스앤마케팅은 SK텔레콤의 유통자회사로<br class="d-none d-sm-block">
                 유일한 SK텔레콤 직영매장 브랜드입니다.<br class="d-none d-sm-block">
@@ -39,14 +39,14 @@
             <% else %>
                 <%= @setting.description.html_safe %>
             <% end %>
-        </h5>
+        </h6>
     </div>
 </section>
 
 <!-- section -->
 <section class="section">
     <div class="section__content">
-        <h5 data-aos="fade-up" class="mb-5">
+        <h6 data-aos="fade-up" class="mb-5 font-weight-normal">
             <% if @setting.nil? || @setting.description2.blank? %>
                 월 <span class="red">100원</span>으로 즐기는
                 당신의 초<span class="red">[구독]</span>생활<br>
@@ -55,7 +55,7 @@
             <% else %>
                 <%= @setting.description2.html_safe %>
             <% end %>
-        </h5>
+        </h6>
 
         <!-- 이미지 -->
         <div class="mb-5" data-aos="fade-up" >
@@ -81,6 +81,12 @@
             <% end %>
         </div>
 
+    </div>
+</section>
+
+<section class="section">
+    <div class="section__content pb-4">
+        <h4>현재 진행중인 혜택과 EVENT</h4>
     </div>
 </section>
 
@@ -150,11 +156,12 @@
 <% end %>
 
 
-<footer class="d-flex justify-content-center flex-column align-items-center pt-5 pb-4">
+<footer class="d-flex justify-content-center flex-column align-items-center py-5 mt-5">
+    <p><br><br></p>
     <div class="orange-text mt-5 mb-2">
         PS&M SNS
     </div>
-    <p class="d-flex justify-content-center w-100 px-2">
+    <p class="d-flex justify-content-center w-100 px-4">
 
         <% if @setting.instagram.blank? %>
             <a class="icon-share mr-3" onclick="alert('준비중입니다.')">

@@ -118,8 +118,8 @@
 
             <div class="section__content">
                 <p class="section__caution">종료된 이벤트입니다.</p>
-                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
-                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <h6 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h4 class="section__title"><%= e.title.html_safe %></h3>
                 <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </div>
 
@@ -134,8 +134,8 @@
 
             <div class="section__content">
                 <p class="section__caution">준비중입니다.</p>
-                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
-                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <h6 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h4 class="section__title"><%= e.title.html_safe %></h3>
                 <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </div>
 
@@ -158,8 +158,8 @@
             <% end %>
 
             <a class="section__content" href="<%= e.link %>">
-                <h4 class="font-weight-normal"><%= e.description.html_safe %></h4>
-                <h2 class="section__title"><%= e.title.html_safe %></h2>
+                <h6 class="font-weight-normal"><%= e.description.html_safe %></h4>
+                <h4 class="section__title"><%= e.title.html_safe %></h3>
                 <p><%= e.start_date.strftime("%Y.%m.%d") %> ~ <%= e.end_date.strftime("%Y.%m.%d") %></p>
             </a>
         </section>
